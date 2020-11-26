@@ -41,7 +41,8 @@ public class StringInterview1 {
 				return o1.getValue() - o2.getValue();
 			}
 		});
-
+             //Collections.sort(listforSort,(o1,o2)->o1.getValue()-o2.getValue());
+             // Collections.sort(listforSort, Comparator.comparingInt(Map.Entry::getValue));
 		/*
 		 * Map<Character, Integer> sortedmap = new LinkedHashMap<>(); for
 		 * (Entry<Character, Integer> entry : entries) { //Putting sorted values in new
