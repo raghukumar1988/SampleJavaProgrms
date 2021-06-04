@@ -6,26 +6,29 @@ package java8features;
 
 @FunctionalInterface
 interface CustomInterface{
-	//String sayHello();
-	//Integer getPhoneNumber(int number );  
+	  //String sayHello();
+	  //Integer getPhoneNumber(int number );
 	  String sconcat(String a, String b);
 }
 
 public class FunInterfaceExample1 {
 
 	public static void main(String[] args) {
-	/*	CustomInterface cinter=()->{return "Hello";};
-		System.out.println(cinter.sayHello());*/
-		
-/*		CustomInterface cinter=(x)->{return x;};
+/*		//CustomInterface cusInterface=()->{return "Hello";};
+        CustomInterface cusInterface=()-> "hello";
+		System.out.println(cusInterface.sayHello());*/
+        /*******************************/
+/*		//CustomInterface cinter=(x)->{System.out.println("Test");return x;};
+        CustomInterface cinter=(x)-> x;
 		System.out.println(cinter.getPhoneNumber(24342));*/
-		
+		/*******************************/
 		//CustomInterface cinter=(x,y)->x+y;
 		CustomInterface cinter=(x, y)->{
-			System.out.println("Strings Entered: "+x+" and "+y);
+			System.out.println("Strings Entered: "+x+" , "+y);
 			return x+y;
 		};
 		System.out.println("Appended string:"+cinter.sconcat("Raghu","Kumar"));
+        /*******************************/
 	}
 	
 	
