@@ -17,10 +17,14 @@ public class GenericsType2<T> {
 		type.set("Pankaj"); //valid
 		System.out.println(type.get());
 		
-		GenericsType2 type1 = new GenericsType2(); //raw type
+		GenericsType2 type1 = new GenericsType2(); //raw type; not recommended
 		type1.set("Pankaj"); //valid
 		type1.set(10); //valid and autoboxing support
 		System.out.println(type1.get());
+
+
+		//GenericsType2<Integer> typeInt = new GenericsType2<>();
+		//typeInt.set("Pankaj"); //Invalid
 	}
 }
 /*Reference: https://www.journaldev.com/1663/java-generics-example-method-class-interface#java-generic-type*/

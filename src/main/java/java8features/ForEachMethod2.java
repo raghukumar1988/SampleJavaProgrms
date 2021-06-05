@@ -17,7 +17,7 @@ public class ForEachMethod2 {
 
 			@Override
 			public void accept(Integer t) {
-				System.out.println("Printing anonomouslyy-->"+t);
+				System.out.println("Printing with Anonymous Consumer: Type1 -->"+t);
 
 			}
 
@@ -29,23 +29,23 @@ public class ForEachMethod2 {
 		strlist.add("Samu");
 		strlist.add("Aamu");
 		strlist.add("Bamu");
-		strlist.forEach(str->System.out.println("Using Lamba Expression-->"+str)); //Type2: Simplified with Lamba Expression
-		
+		strlist.forEach(str->System.out.println("Using Lamba Expression: Type2 -->"+str)); //Type2: Simplified with Lamba Expression
+		strlist.forEach(System.out::println); // Use this method,if you want to print only the values
 		Myconsumer mycon=new Myconsumer();
 		strlist.forEach(mycon);  //Type 3:actual forEach with implemented Consumer Parameter
-		
-		
 	}
-	
-	
+
+
 }
 
 class Myconsumer implements Consumer<String>{
 
    @Override
    public void accept(String t) {
-       System.out.println("Printing by implementation -->"+t);
+       System.out.println("Printing by implementation : Type 3 -->"+t);
 
    }
 
 }
+
+
