@@ -1,5 +1,6 @@
 package collections;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -11,7 +12,6 @@ public class CopyOnWriteArrayIistExample2 {
 		al.add("TEst1");
 		al.add("TEst2");
 		al.add("TEst3");
-		
 		al.add("TEst4");
 		al.add("TEst5");
 		al.add("TEst6");

@@ -16,14 +16,20 @@ class RemoveWhiteSpaces
         char[] strArray = str.toCharArray();
  
         StringBuffer sb = new StringBuffer();
+
+        for (char c : strArray) {  //simplified version
+            if(c!=' ' && c != '\t')
+                sb.append(c);
+
+        }
  
-        for (int i = 0; i < strArray.length; i++)
+        /*for (int i = 0; i < strArray.length; i++)
         {
             if( (strArray[i] != ' ') && (strArray[i] != '\t') )
             {
                 sb.append(strArray[i]);
             }
-        }
+        }*/
  
         System.out.println(sb);           //Output : CoreJavajspservletsjdbcstrutshibernatespring
     }
