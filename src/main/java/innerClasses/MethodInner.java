@@ -15,6 +15,8 @@ package innerClasses;
 }
 
 class MethodInner {
+ 	//we can define the instance as static final
+	private static final Outer outer_static= new Outer();
 	public static void main(String[] args) {
 		Outer x = new Outer();
 		x.outerMethod();

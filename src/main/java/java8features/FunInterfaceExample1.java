@@ -4,6 +4,8 @@ package java8features;
 
 /*Along with the one abstract method, they can have any number of default and static methods.*/
 
+/*Functional interface  can  be used as the assignment target for a lambda expression or method reference.*/
+
 @FunctionalInterface
 interface CustomInterface{
 	  //String sayHello();
@@ -30,9 +32,9 @@ public class FunInterfaceExample1 {
 		System.out.println("Appended string:"+cinter.sconcat("Raghu","Kumar"));
         /*******************************/
 	}
-	
-	
-	
-	/*Refer: https://beginnersbook.com/2017/10/java-8-features-with-examples/ */
+
+
+
+
 
 }

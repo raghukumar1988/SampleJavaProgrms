@@ -37,10 +37,12 @@ class DefaultAndStatic3 implements FirstInterface, SecondInterface, ThirdInterfa
 	}
 	
 	
-/*	1.Two interfaces having default methods with same name whish is causing CTE
-	2.To avoid above, overided method in implemented class
+/*	1.Two interfaces having default methods with same name which is causing CTE(compile)
+	2.To avoid above, overide method in implemented class
 	3.Non static(instance) method called via super
-	4.static methods called via class name*/
+	4.static methods called via class name
+	5.Purpose of static keyword doesn't changed-- to define class level members: fields, methods etc.
+	In Java 8 this behavior was expanded to Interfaces, so they become more similar to classes and now can replace class in most scenarios.*/
 	
 
 }

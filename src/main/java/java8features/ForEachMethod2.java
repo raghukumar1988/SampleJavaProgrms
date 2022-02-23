@@ -13,8 +13,8 @@ public class ForEachMethod2 {
 		al.add(15);
 		al.add(333);
 		al.add(345);
-		al.forEach(new Consumer<Integer>() {   //Type1:actual forEach with Anonymous Consumer Parameter
-
+		//Type1:actual forEach with Anonymous Consumer Parameter
+		al.forEach(new Consumer<Integer>() {
 			@Override
 			public void accept(Integer t) {
 				System.out.println("Printing with Anonymous Consumer: Type1 -->"+t);
@@ -22,24 +22,26 @@ public class ForEachMethod2 {
 			}
 
 		});
-		
-		
+
 		List<String> strlist=new ArrayList<>();
 		strlist.add("Raghu");
 		strlist.add("Samu");
 		strlist.add("Aamu");
 		strlist.add("Bamu");
-		strlist.forEach(str->System.out.println("Using Lamba Expression: Type2 -->"+str)); //Type2: Simplified with Lamba Expression
+
+		//Type2: Simplified with Lamba Expression
+		strlist.forEach(str->System.out.println("Using Lamba Expression: Type2 -->"+str));
 		strlist.forEach(System.out::println); // Use this method,if you want to print only the values
+
+		//Type 3:actual forEach with implemented Consumer Parameter
 		Myconsumer mycon=new Myconsumer();
-		strlist.forEach(mycon);  //Type 3:actual forEach with implemented Consumer Parameter
+		strlist.forEach(mycon);
 	}
 
 
 }
 
 class Myconsumer implements Consumer<String>{
-
    @Override
    public void accept(String t) {
        System.out.println("Printing by implementation : Type 3 -->"+t);

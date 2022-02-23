@@ -27,6 +27,7 @@ public class StreamAdvanced6 {
      names.stream()  
      .filter(f->f.startsWith("M"))  
      .parallel() 
-     .forEachOrdered(n->System.out.println(n));
+     //.forEachOrdered(n->System.out.println(n));
+     .forEachOrdered(System.out::println);
    }
 }
