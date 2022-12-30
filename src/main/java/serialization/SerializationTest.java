@@ -31,7 +31,7 @@ public class SerializationTest {
 		System.out.println("emp Object::"+emp);
 		System.out.println("empNew Object::"+empNew);
 		
-		/*Since salary is a transient variable, it’s value was not saved
+		/*Since salary is a transient variable, it-s value was not saved
 		
 		Similarly static variable values are also not serialized since they belongs to class and not object*/
 	}

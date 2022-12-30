@@ -28,12 +28,12 @@ public class StringReversal {
 	}
 	
 	
-/*	1st Call —>   recursiveMethod("MyJava")
-	2nd Call —> recursiveMethod("yJava") + "M"
-	3rd Call —>  (recursiveMethod("Java") + "y") + "M"
-	4th call —>  ((recursiveMethod("ava") + "J")+"y") + "M"
-	5th Call —>  (((recursiveMethod("va") + "a") + "J")+"y") + "M"
-	6th Call —>  ((((recursiveMethod("a") + "v") + "a") + "J")+"y") + "M"*/
+/*	1st Call ->   recursiveMethod("MyJava")
+	2nd Call -> recursiveMethod("yJava") + "M"
+	3rd Call ->  (recursiveMethod("Java") + "y") + "M"
+	4th call ->  ((recursiveMethod("ava") + "J")+"y") + "M"
+	5th Call ->  (((recursiveMethod("va") + "a") + "J")+"y") + "M"
+	6th Call ->  ((((recursiveMethod("a") + "v") + "a") + "J")+"y") + "M"*/
 	
 	
 	/*This method takes the first character of a string (str.charAt(0)) and puts it at the end of the string. And then calls itself on the remainder of the string (str.substring(1)).

@@ -8,7 +8,7 @@ https://howtodoinjava.com/lombok/lombok-builder-annotation/*/
         But, clients may return with a bunch of questions for us, including:
 
         - Which constructor should I invoke? The one with four parameters or the one with five or six?
-        - What is the default value for those optional parameters if I don’t pass a value for each?
+        - What is the default value for those optional parameters if I don-t pass a value for each?
         - If I want to pass values only for mail and phone but not for address, how can I fulfill this requirement?
         - What will happen if I mistakenly pass the value intended for the address to mail (compile may not complain about it because they have the same type)?*/
 

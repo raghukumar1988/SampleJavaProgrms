@@ -20,6 +20,7 @@ public class LambaExample1 {
         // Instead of creating our own FI we can use the lang provided
         Consumer<String> greetingConsumer = (a)-> System.out.println("Hello World from Lambda " +a);
         greetingConsumer.accept("Raghu");
+
     }
 
     // Custom FI

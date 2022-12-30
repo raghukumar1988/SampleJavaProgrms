@@ -13,6 +13,46 @@
             <artifactId>lombok</artifactId>
             <version>1.18.20</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.9.0</version>
+            <!--<scope>test</scope>-->
+        </dependency>
+
+        <!--For Junit  5 parameterised tests-->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>5.9.0</version>
+            <!--<scope>test</scope>-->
+        </dependency>
+
+        <!--To support Hamcrest matchers-->
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-library</artifactId>
+            <version>2.2</version>
+            <!--<scope>test</scope>-->
+        </dependency>
+
+        <!--Mockito support-->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>4.8.0</version>
+           <!-- <scope>test</scope>-->
+        </dependency>
+
+        <!--To get Mockito support in Junit 5-->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <version>4.8.0</version>
+            <!--<scope>test</scope>-->
+        </dependency>
+
     </dependencies>
     <build>
         <plugins>
