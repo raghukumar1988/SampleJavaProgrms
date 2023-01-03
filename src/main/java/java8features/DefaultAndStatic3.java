@@ -16,7 +16,7 @@ interface SecondInterface {
 
 interface ThirdInterface {
 	static void viewText() {
-		System.out.println("Inside Second");
+		System.out.println("Inside Third");
 	}
 }
 
@@ -24,23 +24,24 @@ class DefaultAndStatic3 implements FirstInterface, SecondInterface, ThirdInterfa
 	public static void main(String[] args) {
 		DefaultAndStatic3 te = new DefaultAndStatic3();
 		te.showText();
-		
-		//ThirdInterface.viewText();
+		//ThirdInterface.viewText(); // to call static method
+
 	}
 
-	@Override
+	@Override // either you can reuse the existing implementation or define your own
 	public void showText() {
-		 //non static methods and variables need to be  accessed using . operator -IMPORTANT
-		FirstInterface.super.showText();//to call super implementation- as it has same method names in both Interfaces
-		SecondInterface.super.showText();
-		ThirdInterface.viewText();
+		//FirstInterface.super.showText(); //to reuse the implementation of FirstInterface
+		SecondInterface.super.showText(); //to reuse the implementation of SecondInterface
+		ThirdInterface.viewText(); //to call static method
+		System.out.println("Some custom implementation");
+
 	}
 	
 	
-/*	1.Two interfaces having default methods with same name which is causing CTE(compile)
-	2.To avoid above, overide method in implemented class
-	3.Non static(instance) method called via super
-	4.static methods called via class name
+/*	1.Two interfaces with same default methods will end up in  CTE(compile)
+	2.To avoid above, override method in implemented class
+	3. If you want to use any of existing default method implementation, we can call using super keyword.
+	4. static methods can be invoked using the classname(similer to static methods in class)
 	5.Purpose of static keyword doesn't changed-- to define class level members: fields, methods etc.
 	In Java 8 this behavior was expanded to Interfaces, so they become more similar to classes and now can replace class in most scenarios.*/
 	
