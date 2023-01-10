@@ -1,4 +1,4 @@
-package designPatterns.builder;
+package designPatterns.builder.normalway3;
 
 public class Employee3 {
 
@@ -22,7 +22,7 @@ So, the only way to get an Employee object is through the nested EmpolyeeBuilder
     private final String address;    //optional
     private final String mail;    //optional
 
-    public Employee3(EmployeeBuilder builder) {
+    private Employee3(EmployeeBuilder builder) {
         this.firstName = builder.firstName;
         this.lastName = builder.lastName;
         this.age = builder.age;

@@ -3,6 +3,7 @@ package java8features;
 
 /*Refer: https://beginnersbook.com/2017/10/java-8-features-with-examples/ */
 interface FirstInterface {
+	void readText();
 	default void showText() {
 		System.out.println("Inside FirstInterface");
 	}
@@ -23,9 +24,15 @@ interface ThirdInterface {
 class DefaultAndStatic3 implements FirstInterface, SecondInterface, ThirdInterface {
 	public static void main(String[] args) {
 		DefaultAndStatic3 te = new DefaultAndStatic3();
+		te.readText();// normal interface implemented method
 		te.showText();
 		//ThirdInterface.viewText(); // to call static method
 
+	}
+
+	@Override
+	public void readText() {
+		System.out.println("Reading text from Interface 1");
 	}
 
 	@Override // either you can reuse the existing implementation or define your own
@@ -38,7 +45,10 @@ class DefaultAndStatic3 implements FirstInterface, SecondInterface, ThirdInterfa
 	}
 	
 	
-/*	1.Two interfaces with same default methods will end up in  CTE(compile)
+/*
+       The most common use of interface default methods is to incrementally provide additional functionality
+        to a given type without breaking down the implementing classes.
+	1.Two interfaces with same default methods will end up in  CTE(compile)
 	2.To avoid above, override method in implemented class
 	3. If you want to use any of existing default method implementation, we can call using super keyword.
 	4. static methods can be invoked using the classname(similer to static methods in class)

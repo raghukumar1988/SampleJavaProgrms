@@ -1,4 +1,4 @@
-package designPatterns.builder;
+package designPatterns.builder.byusinglombok;
 
 public class LombokBuilderClient {
     public static void main(String[] args) {

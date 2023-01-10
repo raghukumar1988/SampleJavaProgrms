@@ -21,7 +21,7 @@ public class AssertionBasics1 {
     @Test // fails for a purpose
     @DisplayName("Test successful decimal conversion") // if the method name is not readable enough
     void testConvertToDecimalInvalidDenominator_errorCase() {
-        Assertions.assertThrows(IllegalArgumentException.class, () -> MathTools.convertToDecimal(3, 2),"Optional test Failure reason goes here!");
+        Assertions.assertThrows(IllegalArgumentException.class, () -> MathTools.convertToDecimal(3, 0),"Optional test Failure reason goes here!");
     }
 
 

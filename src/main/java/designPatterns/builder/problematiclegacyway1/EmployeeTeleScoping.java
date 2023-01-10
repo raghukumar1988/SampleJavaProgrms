@@ -1,4 +1,4 @@
-package designPatterns.builder;
+package designPatterns.builder.problematiclegacyway1;
 
 /* Must go - https://howtodoinjava.com/design-patterns/creational/builder-pattern-in-java/
 https://howtodoinjava.com/lombok/lombok-builder-annotation/*/
@@ -12,7 +12,8 @@ https://howtodoinjava.com/lombok/lombok-builder-annotation/*/
         - If I want to pass values only for mail and phone but not for address, how can I fulfill this requirement?
         - What will happen if I mistakenly pass the value intended for the address to mail (compile may not complain about it because they have the same type)?*/
 
-public class EmployeeTeleScoping1 {
+
+public class EmployeeTeleScoping {
     private final String firstName; //required
     private final String lastName;  //required
     private final int age;          //required
@@ -21,19 +22,19 @@ public class EmployeeTeleScoping1 {
     private final String address;   //optional
     private final String mail;      //optional
     //default constructor needs to be added manually
-    public EmployeeTeleScoping1(String firstName, String lastName, int age, int personalId) {
+    public EmployeeTeleScoping(String firstName, String lastName, int age, int personalId) {
         this(firstName, lastName, age, personalId, "", "");
     }
 
-    public EmployeeTeleScoping1(String firstName, String lastName, int age, int personalId, String phone) {
+    public EmployeeTeleScoping(String firstName, String lastName, int age, int personalId, String phone) {
         this(firstName, lastName, age, personalId, phone, "");
     }
 
-    public EmployeeTeleScoping1(String firstName, String lastName, int age, int personalId, String phone, String address) {
+    public EmployeeTeleScoping(String firstName, String lastName, int age, int personalId, String phone, String address) {
         this(firstName, lastName, age, personalId, phone, address, "");
     }
 
-    public EmployeeTeleScoping1(String firstName, String lastName, int age, int personalId, String phone, String address, String mail) {
+    public EmployeeTeleScoping(String firstName, String lastName, int age, int personalId, String phone, String address, String mail) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;

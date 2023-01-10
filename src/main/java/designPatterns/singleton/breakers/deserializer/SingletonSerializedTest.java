@@ -1,11 +1,13 @@
 
-package designPatterns.singleton;
+package designPatterns.singleton.breakers.deserializer;
+
+import designPatterns.singleton.breakers.deserializer.SerializedSingleton;
 
 import java.io.*;
 
 public class SingletonSerializedTest {
 
-    public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException {
+    public static void main(String[] args) throws  IOException, ClassNotFoundException {
         SerializedSingleton instanceOne = SerializedSingleton.getInstance();
         ObjectOutput out = new ObjectOutputStream(new FileOutputStream(
                 "filename.ser"));
@@ -17,10 +19,13 @@ public class SingletonSerializedTest {
                 "filename.ser"));
         SerializedSingleton instanceTwo = (SerializedSingleton) in.readObject();
         in.close();
-        
+
+        // Run again after enabling readResolve()
         System.out.println("instanceOne hashCode="+instanceOne.hashCode());
         System.out.println("instanceTwo hashCode="+instanceTwo.hashCode());
         
     }
 
 }
+
+/* Without readResolve method, the deserialization will create a new instance which breaks singelton. */

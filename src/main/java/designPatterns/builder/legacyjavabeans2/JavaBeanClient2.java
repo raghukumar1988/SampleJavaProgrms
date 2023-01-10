@@ -1,4 +1,4 @@
-package designPatterns.builder;
+package designPatterns.builder.legacyjavabeans2;
 
 public class JavaBeanClient2 {
     public static void main(String[] args) {

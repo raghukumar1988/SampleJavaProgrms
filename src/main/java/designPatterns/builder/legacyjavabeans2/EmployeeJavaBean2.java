@@ -1,4 +1,4 @@
-package designPatterns.builder;
+package designPatterns.builder.legacyjavabeans2;
 
 /* Drawbacks:
     It is no surprise that the JavaBean pattern increases the readability of code and the flexibility of object construction.
