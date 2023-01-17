@@ -1,5 +1,4 @@
-
-package serialization;
+package serialization.serialization;
 
 import java.io.IOException;
 
@@ -19,4 +18,5 @@ public class DeserializationTest {
 		System.out.println("empNew Object::"+empNew);
 		
 	}
+
 }

@@ -15,7 +15,7 @@ class ConCurrentHashmap5 {
 		map.put(45, new Country(11, "Nigeria"));
 		for (Map.Entry<Integer, Country> entry : map.entrySet()) { // iterating based on map entires
 			System.out.println("from EntrySet Key-->" + entry.getKey() + "Value-->" + entry.getValue().getCountyrName());
-			if(!map.keySet().contains(35)) {//even without thus check it wont insert duplicates
+			if(!map.keySet().contains(35)) {
 			map.put(35, new Country(15, "Dubai"));
 			System.out.println("Inserted Dubai");
 			}

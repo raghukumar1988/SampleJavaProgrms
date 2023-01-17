@@ -1,5 +1,6 @@
+package serialization.serialization.proxy;
 
-package serialization.proxyPattern;
+import serialization.serialization.SerializationUtil;
 
 import java.io.IOException;
 

@@ -28,10 +28,10 @@ class Student {
 
 public class Manager {
 	public static void main(String args[]) {
-		//Student s1 = new Student("100", "John", 18);
+		Student s1 = new Student("100", "John", 18);
 		//Student s11 = new Student("100", "John", 18, "Java"); // Calling parameterized constructor
 		Student s2 = new Student("101", "Adam", 20, "Hadoop"); // Calling parameterized constructor
-		//s1.display();
+		s1.display();
 		s2.display();
 	}
 }

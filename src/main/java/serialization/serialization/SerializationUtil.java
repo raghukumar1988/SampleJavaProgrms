@@ -1,7 +1,10 @@
+package serialization.serialization;
 
-package serialization.proxyPattern;
-
-import java.io.*;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 /**
  * A simple class with generic serialize and deserialize method implementations

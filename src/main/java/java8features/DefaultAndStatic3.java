@@ -48,7 +48,7 @@ class DefaultAndStatic3 implements FirstInterface, SecondInterface, ThirdInterfa
 /*
        The most common use of interface default methods is to incrementally provide additional functionality
         to a given type without breaking down the implementing classes.
-	1.Two interfaces with same default methods will end up in  CTE(compile)
+	1.Implementing two interfaces with same default methods will end up in  CTE(compile)
 	2.To avoid above, override method in implemented class
 	3. If you want to use any of existing default method implementation, we can call using super keyword.
 	4. static methods can be invoked using the classname(similer to static methods in class)

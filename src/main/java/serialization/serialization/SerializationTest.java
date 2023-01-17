@@ -1,9 +1,9 @@
-
-package serialization;
+package serialization.serialization;
 
 import java.io.IOException;
 
 public class SerializationTest {
+
 	
 	public static void main(String[] args) {
 		String fileName="employee.ser";
@@ -11,7 +11,6 @@ public class SerializationTest {
 		emp.setId(100);
 		emp.setName("Pankaj");
 		emp.setSalary(5000);
-		//emp.setPassword("Admmin");
 		
 		//serialize to file
 		try {
@@ -30,9 +29,12 @@ public class SerializationTest {
 		
 		System.out.println("emp Object::"+emp);
 		System.out.println("empNew Object::"+empNew);
-		
+
 		/*Since salary is a transient variable, it-s value was not saved
-		
+
 		Similarly static variable values are also not serialized since they belongs to class and not object*/
+
 	}
+
+
 }

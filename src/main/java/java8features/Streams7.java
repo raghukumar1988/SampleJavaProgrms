@@ -1,6 +1,7 @@
 package java8features;
 
 import java.util.*;
+import java.util.function.IntFunction;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -18,17 +19,14 @@ public class Streams7 {
 
         Stream<Integer> intStream = Stream.of(1,2,3,4);
         Integer[] intArray = intStream.toArray(Integer[]::new);
+        /*Integer[] intArray = intStream.toArray(new IntFunction<Integer[]>() {
+            @Override
+            public Integer[] apply(int value) {
+                return new Integer[0];
+            }
+        });*/
         System.out.println(Arrays.toString(intArray)); //prints [1, 2, 3, 4]
 
-
-        /*Stream Intermediate Operations*/
-        List<Integer> myList = new ArrayList<>();
-        for(int i=0; i<100; i++)
-            myList.add(i);
-        Stream<Integer> sequentialStream = myList.stream();
-        Stream<Integer> highNums = sequentialStream.filter(p -> p > 90); //filter numbers greater than 90
-        System.out.print("High Nums greater than 90=");
-        highNums.forEach(p -> System.out.println(p+" "));
 
 
         Stream<String> names = Stream.of("aBc", "d", "ef");

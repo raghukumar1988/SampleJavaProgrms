@@ -1,17 +1,26 @@
+import java.util.HashMap;
+import java.util.Hashtable;
+import java.util.Map;
+
 public class Test
 {
-	public static void main(String[] args)
-	{
-		System.out.println(findNumber(145,4));
-	}
+	public static void main(String[] args){
+		String fstr= new String("Javatutorials");
 
-	private static int findNumber(int number, int digit) {
-		char chardigit=Integer.toString(digit).charAt(0);
-		for(int i=number;i>0;--i) {
-			if(Integer.toString(i).indexOf(chardigit)==-1) {
-				return i;
-			}
-		}
-		return -1;
+		String sstr= new String("Javatutorials");
+
+		String ssstr= new String("Javatutorials");
+
+		Hashtable ht=new Hashtable();
+
+		ht.put(fstr, "abc");
+
+		ht.put(sstr, "xyz");
+		ht.put(ssstr, "frt");
+		System.out.println(fstr.hashCode());
+		System.out.println(sstr.hashCode());
+		System.out.println(ssstr.hashCode());
+
+		System.out.println(ht);
 	}
 }

@@ -1,12 +1,9 @@
-
-package serialization.proxyPattern;
+package serialization.serialization.proxy;
 
 import java.io.InvalidObjectException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
 
-
-/*Refer https://www.journaldev.com/2452/serialization-in-java */
 public class Data implements Serializable{
 
 	private static final long serialVersionUID = 2087368867376448459L;
@@ -14,7 +11,6 @@ public class Data implements Serializable{
 	private String data;
 	
 	public Data(String d){
-		System.out.println("Inside Data Constructor");
 		this.data=d;
 	}
 
@@ -42,12 +38,10 @@ public class Data implements Serializable{
 		
 		public DataProxy(Data d){
 			//obscuring data for security
-			System.out.println("Inside DataProxy Constructor");
 			this.dataProxy = PREFIX + d.data + SUFFIX;
 		}
 		
 		private Object readResolve() throws InvalidObjectException {
-			System.out.println("Inside Read resolve");
 			if(dataProxy.startsWith(PREFIX) && dataProxy.endsWith(SUFFIX)){
 			return new Data(dataProxy.substring(3, dataProxy.length() -4));
 			}else throw new InvalidObjectException("data corrupted");
@@ -57,7 +51,6 @@ public class Data implements Serializable{
 	
 	//replacing serialized object to DataProxy object
 	private Object writeReplace(){
-		System.out.println("Inside Write Replace");
 		return new DataProxy(this);
 	}
 	
