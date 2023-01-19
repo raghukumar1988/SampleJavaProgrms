@@ -28,9 +28,9 @@ public class StringInterview1 {
         return finalString;
     }
 
-    private static List<Entry<Character, Integer>> sortMapByValue(Map<Character, Integer> treemap) {
+    private static List<Entry<Character, Integer>> sortMapByValue(Map<Character, Integer> map) {
 
-        Set<Entry<Character, Integer>> set = treemap.entrySet(); // getting entryset and saving in Set
+        Set<Entry<Character, Integer>> set = map.entrySet(); // getting entryset and saving in Set
         List<Entry<Character, Integer>> entries = new ArrayList<>(set);// Creates new list by passing set as arguments
         Collections.sort(entries, new Comparator<Entry<Character, Integer>>() { // Comparator anonymonus implementation
 
@@ -52,4 +52,20 @@ public class StringInterview1 {
         return entries;
     }
 
+
+    /* Suppose you were creating a mapping of names to Person objects.
+    You might want to periodically output the people in alphabetical order by name.
+    A TreeMap lets you do this.
+
+    A TreeMap also offers a way to, given a name, output the next 10 people.
+    This could be useful for a “More” function in many applications.
+
+    A LinkedHashMap is useful whenever you need the ordering of keys to match the ordering of insertion.
+    This might be useful in a caching situation, when you want to delete the oldest item.
+
+    Generally, unless there is a reason not to, you would use HashMap.
+
+    That is, if you need to get the keys back in insertion order, then use LinkedHashMap.
+    If you need to get the keys back in their true/natural order, then use TreeMap.
+    Otherwise, HashMap is probably best. It is typically faster and requires less overhead.*/
 }

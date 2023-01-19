@@ -1,4 +1,4 @@
-package string;
+package string.stringvsbuffervsbuilder;
 class StringBufferEqualsDemo{
  
 public static void main(String [] args){ 
