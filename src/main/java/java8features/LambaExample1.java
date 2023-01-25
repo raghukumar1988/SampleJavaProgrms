@@ -8,18 +8,18 @@ public class LambaExample1 {
         Greeting greetingNormal= new Greeting() {
             @Override
             public void greet(String a) {
-                System.out.println("Hello World " +a);
+                System.out.println("Hello from  " +a);
             }
         };
         greetingNormal.greet("Java 7");
 
-        // newer way of implementation
-        Greeting greetingLamda= (a)-> System.out.println("Hello World from Lambda " +a);
-        greetingLamda.greet("Java 8");
+        // newer way of implementation and uses Custom FI
+        Greeting greetingLamda= (a)-> System.out.println("Hello from " +a);
+        greetingLamda.greet("Java 8 Lambda");
 
-        // Instead of creating our own FI we can use the lang provided
-        Consumer<String> greetingConsumer = (a)-> System.out.println("Hello World from Lambda " +a);
-        greetingConsumer.accept("Raghu");
+        // Instead of creating our own FI we can use the default lang provided
+        Consumer<String> greetingConsumer = (a)-> System.out.println("Hello  from " +a);
+        greetingConsumer.accept("Java 8 Lambda with Consumer");
 
     }
 

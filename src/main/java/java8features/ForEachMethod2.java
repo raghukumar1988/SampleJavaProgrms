@@ -13,6 +13,7 @@ public class ForEachMethod2 {
 		al.add(15);
 		al.add(333);
 		al.add(345);
+
 		//Type1:actual forEach with Anonymous Consumer Parameter
 		al.forEach(new Consumer<Integer>() {
 			@Override
@@ -31,7 +32,7 @@ public class ForEachMethod2 {
 
 		//Type2: Simplified with Lamba Expression
 		strlist.forEach(str->System.out.println("Using Lamba Expression: Type2 -->"+str));
-		strlist.forEach(System.out::println); // Use this method,if you want to print only the values
+		strlist.forEach(System.out::println); // Use method reference,if you want to print only the values
 
 		//Type 3:actual forEach with implemented Consumer Parameter
 		Myconsumer mycon=new Myconsumer();
