@@ -1,4 +1,4 @@
-package designPatterns.builder.problematiclegacyway1;
+package designPatterns.builder.legacyway1;
 
 /* Must go - https://howtodoinjava.com/design-patterns/creational/builder-pattern-in-java/
 https://howtodoinjava.com/lombok/lombok-builder-annotation/*/

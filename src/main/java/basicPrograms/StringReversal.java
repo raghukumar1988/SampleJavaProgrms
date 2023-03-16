@@ -5,19 +5,37 @@ package basicPrograms;
 public class StringReversal {
 
 	public static void main(String[] args) {
-		String sf = "Raghu";
-		// String rs = "";
-		StringBuffer rs = new StringBuffer();
-		char[] charArray = sf.toCharArray();
-		System.out.println(sf);
-		for (int i = charArray.length - 1; i >= 0; i--) {
-			// System.out.print(charArray[i]); //using print method
-			// rs += charArray[i]; //using assignment operator
-			rs.append(charArray[i]); // using StringBuffer append method
-		}
-		System.out.println(rs);
-		System.out.println("Revrese using recursive  "+recursiveMethod("MyJava"));
+		String str = "MyJava";
+		reverseString1(str); //using for loop
+		reverseString11(str); //using for loop 2
+		reverseString2(str); // using recursiveMethod
+	}
 
+	private static void reverseString11(String str) {
+		StringBuilder revString= new StringBuilder();
+		char[] chars = str.toCharArray();
+		/*for (int i = 0; i <chars.length ; i++) { // another way
+			revString.insert(0,chars[i]);
+		}*/
+		for(char letter :chars){
+			revString.insert(0,letter);
+		}
+		System.out.println("Reversed "+revString);
+	}
+
+	private static void reverseString1(String str) {
+		StringBuffer revString = new StringBuffer();
+		// String revString = "";
+		char[] charArray = str.toCharArray();
+		for (int i = charArray.length - 1; i >= 0; i--) {
+			// revString += charArray[i]; //using String assignment operator
+			revString.append(charArray[i]); // using StringBuffer append method
+		}
+		System.out.println("Reversed "+revString);
+	}
+
+	private static void reverseString2(String str) {
+		System.out.println("Reverse using recursive  "+recursiveMethod(str));
 	}
 
 	static String recursiveMethod(String str) {

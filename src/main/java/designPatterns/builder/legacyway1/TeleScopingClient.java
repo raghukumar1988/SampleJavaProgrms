@@ -1,4 +1,4 @@
-package designPatterns.builder.problematiclegacyway1;
+package designPatterns.builder.legacyway1;
 
 public class TeleScopingClient {
     public static void main(String[] args) {

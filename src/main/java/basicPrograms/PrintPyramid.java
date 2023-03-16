@@ -1,7 +1,14 @@
 package basicPrograms;
 import java.util.Scanner;
 
-public class MainClass
+
+/*  Scanner to get the no of rows(n)
+ for loop 1 - to print n lines
+ inner for loop 1 to print the n spaces before a number
+ inner for loop 2 to print the number
+ Add spaces in inner loop 2 to maintain the pyramid layout  */
+
+public class PrintPyramid
 {
     public static void main(String[] args)
     {
@@ -46,3 +53,4 @@ public class MainClass
         }
     }
 }
+
