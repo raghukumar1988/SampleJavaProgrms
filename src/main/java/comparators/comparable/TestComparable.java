@@ -12,10 +12,13 @@ public class TestComparable {
 
         /*With Custom TYpe*/
         List<AccountDetails> accountDetailsList = new ArrayList<>();
-        // Hint - How do I initialize the long with the value 12345678910?
-        //Answer: You should add L: long i = 12345678910L;
-        //2) Are all numeric literals by default of type int? Answer : Yes
+        /*
+        1) How do I initialize the long with the value 12345678910?
+        Answer: You should add L: long i = 12345678910L;
 
+        2) Are all numeric literals by default of type int?
+        Answer : Yes
+        */
         accountDetailsList.add(new AccountDetails(43987543L,"Raghu",2344.45,true));
         accountDetailsList.add(new AccountDetails(23987543L,"Raja",344.45,false));
         accountDetailsList.add(new AccountDetails(73987543L,"Ramu",5344.45,true));
@@ -24,11 +27,14 @@ public class TestComparable {
         // uncomment different implementations and check the results
         accountDetailsList.forEach(accountDetail -> System.out.println("Before sort "+accountDetail));
         System.out.println("----------");
-        Collections.sort(accountDetailsList); // used with comparable, for comparator list.sort is recommended
+        Collections.sort(accountDetailsList);
         accountDetailsList.forEach(accountDetail -> System.out.println("after sort "+accountDetail));
         //System.out.println("Before sort "+ accountDetailsList);// another way to print
         System.out.println("*********");
 
+        /* NOTE --> for comparator use
+         Recommended - list.sort(Comparator)
+         Not- Recommended - Collections.sort(accountDetailsList,Comparator); */
 
         /*With Primitive TYpe 1 */
         List<String> accountHolderNameList= new ArrayList<>();
@@ -67,10 +73,11 @@ public class TestComparable {
 
 
         //Arrays Sort2
-        Country[] conArr=new Country[3];
-        conArr[0]=new Country(12, "Zndia");
-        conArr[1]=new Country(3, "German");
-        conArr[2]=new Country(1, "Neoal");
+        AccountDetails[] conArr=new AccountDetails[4];
+        conArr[0]=new AccountDetails(43987543L,"Raghu",2344.45,true);
+        conArr[1]=new AccountDetails(23987543L,"Raja",344.45,false);
+        conArr[2]=new AccountDetails(73987543L,"Ramu",5344.45,true);
+        conArr[3]=new AccountDetails(33987543L,"Hari",1344.45,false);
         System.out.println("Raww--"+Arrays.toString(conArr));
         System.out.println("----------");
         Arrays.sort(conArr);

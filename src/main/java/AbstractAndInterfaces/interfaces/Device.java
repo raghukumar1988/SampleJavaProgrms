@@ -1,4 +1,4 @@
-package AbstractAndInterfaces;
+package AbstractAndInterfaces.interfaces;
 class Device implements IDevice {
 	public void doIt() {  //commenting this method  will throw error in Phone 3
 		System.out.println("Inside doIt method of device..");

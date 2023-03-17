@@ -1,11 +1,8 @@
 package basicPrograms;
 
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.Set;
-import java.util.TreeSet;
 
-public class SecondLargest {
+public class SecondLargest5 {
 
     public static void main(String[] args) {
 		int[] numberArray = {45, 51,71, 28, 75, 49, 42, 68};

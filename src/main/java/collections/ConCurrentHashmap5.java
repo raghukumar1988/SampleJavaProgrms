@@ -14,7 +14,7 @@ class ConCurrentHashmap5 {
 		map.put(55, new Country(45, "Burma"));
 		map.put(45, new Country(11, "Nigeria"));
 		for (Map.Entry<Integer, Country> entry : map.entrySet()) { // iterating based on map entires
-			System.out.println("from EntrySet Key-->" + entry.getKey() + "Value-->" + entry.getValue().getCountyrName());
+			System.out.println("from EntrySet Key-->" + entry.getKey() + "Value-->" + entry.getValue().getCountryName());
 			if(!map.keySet().contains(35)) {
 			map.put(35, new Country(15, "Dubai"));
 			System.out.println("Inserted Dubai");
@@ -22,7 +22,7 @@ class ConCurrentHashmap5 {
 			map.remove(45);
 		}
 
-		map.forEach((key, val) -> System.out.println("Key-->"+key + " Country Name--> " + val.getCountyrName()));
+		map.forEach((key, val) -> System.out.println("Key-->"+key + " Country Name--> " + val.getCountryName()));
 
 	}
 }

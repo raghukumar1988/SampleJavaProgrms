@@ -8,8 +8,8 @@ public class Example2 {
 
 	public static void main(String[] args) {
 		Example2 ex2 = new Example2();
-		ex2.x = ex2.r1.calculateAreaOfRectangle(10, 5);   //non static methods and variables 
-		                                                  // need to be  accessed using . operator
+		//non-static methods and variables should be  accessed using . operator
+		ex2.x = ex2.r1.calculateAreaOfRectangle(10, 5);
 		System.out.println(ex2.x);
 /*		 Rectangle rt=new Rectangle();
 		 x=rt.calculateAreaOfRectangle(10, 5);

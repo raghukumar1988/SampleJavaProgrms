@@ -1,4 +1,4 @@
-package junit;
+package junit.utils;
 
 import java.sql.SQLException;
 import java.util.Arrays;

@@ -1,5 +1,12 @@
 package comparators.comparable;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
 public class AccountDetails implements Comparable<AccountDetails> {
 
     private Long accNumber;
@@ -21,7 +28,7 @@ public class AccountDetails implements Comparable<AccountDetails> {
 
     @Override
     public int compareTo(AccountDetails o){
-        return this.getAccHolderName().compareTo(o.getAccHolderName());
+        return this.getAccHolderName().compareTo(o.getAccHolderName());// for String we dont have compare
     }
    // we have Integer.compare(integer1, integer2); for int type
 
@@ -36,45 +43,6 @@ public class AccountDetails implements Comparable<AccountDetails> {
     }*/
 
 
-    public Long getAccNumber() {
-        return accNumber;
-    }
 
-    public void setAccNumber(Long accNumber) {
-        this.accNumber = accNumber;
-    }
-
-    public String getAccHolderName() {
-        return accHolderName;
-    }
-
-    public void setAccHolderName(String accHolderName) {
-        this.accHolderName = accHolderName;
-    }
-
-    public Double getAccBalance() {
-        return accBalance;
-    }
-
-    public void setAccBalance(Double accBalance) {
-        this.accBalance = accBalance;
-    }
-
-    public boolean getIsActive(){
-        return isActive;
-    }
-
-    public void setIsActive(boolean isActive){
-        this.isActive=isActive;
-    }
-    @Override
-    public String toString() {
-        return "AccountDetails{" +
-                "accNumber=" + accNumber +
-                ", accHolderName='" + accHolderName + '\'' +
-                ", accBalance=" + accBalance +
-                ", isActive =" + isActive +
-                '}';
-    }
 
 }

@@ -2,7 +2,7 @@ package basicPrograms;
 
 import java.util.regex.Pattern;
 
-public class SentenceReversal {
+public class SentenceReversal11 {
     public static void main(String[] args) {
         System.out.println(reverseWordsUsingString("I love java programming"));
         System.out.println(reverseWordsUsingStringEnhancedForLoop("I love java programming"));

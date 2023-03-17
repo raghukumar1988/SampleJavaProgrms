@@ -1,14 +1,12 @@
 package junit;
 
+import junit.utils.MathTools;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.IntStream;
@@ -26,7 +24,7 @@ public class ParameterisedTests2 {
         Assertions.assertTrue(MathTools.isEven(number));
     }
 
-    @Disabled
+    //@Disabled
     @ParameterizedTest
     @MethodSource("generateEvenNumbers") // if we want to use the output of method as source
     void testIsEvenRange(int number) {

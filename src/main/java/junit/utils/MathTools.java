@@ -1,4 +1,4 @@
-package junit;
+package junit.utils;
 
 public class MathTools {
     public static double convertToDecimal(int numerator, int denominator) {

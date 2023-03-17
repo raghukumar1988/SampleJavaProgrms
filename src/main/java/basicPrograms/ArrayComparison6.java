@@ -1,7 +1,7 @@
-package arrays;
+package basicPrograms;
 import java.util.Arrays;
 
-public class ArrayComparison {
+public class ArrayComparison6 {
 	public static void main(String args[]) {
 		String[] strArr1 = { "java", "swings", "j2ee", "struts", "jsp", "hibernate" };
 		String[] strArr2 = { "java", "struts", "j2ee", "hibernate", "swings", "jsp" };

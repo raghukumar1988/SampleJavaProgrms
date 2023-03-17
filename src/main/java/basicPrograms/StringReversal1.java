@@ -2,17 +2,23 @@ package basicPrograms;
 
 /*https://javaconceptoftheday.com/java-program-to-reverse-a-string/
 */
-public class StringReversal {
+public class StringReversal1 {
 
 	public static void main(String[] args) {
 		String str = "MyJava";
-		reverseString1(str); //using for loop
-		reverseString11(str); //using for loop 2
-		reverseString2(str); // using recursiveMethod
+		reverseString1(str); //using StringBuffer append method
+		reverseString11(str); //using StringBuilder insert method
+		reverseStringUsingBuilder(str);// using reverse method
+		System.out.println("Using recursive method "+recursiveMethod(str));//recursive method
+	}
+
+	private static void reverseStringUsingBuilder(String str) {
+		StringBuilder stringBuilder= new StringBuilder(str);
+		System.out.println("Using reverse method "+stringBuilder.reverse());
 	}
 
 	private static void reverseString11(String str) {
-		StringBuilder revString= new StringBuilder();
+		StringBuilder revString= new StringBuilder();// StringBuilder is new Java 5  Non-synchronised(performant) class
 		char[] chars = str.toCharArray();
 		/*for (int i = 0; i <chars.length ; i++) { // another way
 			revString.insert(0,chars[i]);
@@ -20,22 +26,18 @@ public class StringReversal {
 		for(char letter :chars){
 			revString.insert(0,letter);
 		}
-		System.out.println("Reversed "+revString);
+		System.out.println("Reverse using insert method "+revString);
 	}
 
 	private static void reverseString1(String str) {
-		StringBuffer revString = new StringBuffer();
+		StringBuffer revString = new StringBuffer();  // StringBuffer is legacy synchronised class
 		// String revString = "";
 		char[] charArray = str.toCharArray();
 		for (int i = charArray.length - 1; i >= 0; i--) {
 			// revString += charArray[i]; //using String assignment operator
 			revString.append(charArray[i]); // using StringBuffer append method
 		}
-		System.out.println("Reversed "+revString);
-	}
-
-	private static void reverseString2(String str) {
-		System.out.println("Reverse using recursive  "+recursiveMethod(str));
+		System.out.println("Reverse using StringBuffer append "+revString);
 	}
 
 	static String recursiveMethod(String str) {
