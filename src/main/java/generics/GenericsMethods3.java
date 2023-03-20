@@ -9,10 +9,10 @@ public class GenericsMethods3 {
 	
 	public static void main(String args[]){
 		GenericsType2<String> g1 = new GenericsType2<>();
-		g1.set("Pankaj");
+		g1.set("Raghu");
 		
 		GenericsType2<String> g2 = new GenericsType2<>();
-		g2.set("Pankaj");
+		g2.set("Kumar");
 		
 		boolean isEqual = GenericsMethods3.<String>isEqual(g1, g2);
 		//above statement can be written simply as

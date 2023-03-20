@@ -1,8 +1,7 @@
 package basicPrograms;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import basicPrograms.model.Book;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -39,10 +38,3 @@ public class MapBookListWithAuthor4 {
 
 }
 
-@Data
-@AllArgsConstructor
-class Book {
-    private int bookId;
-    private String author;
-    private String title;
-}
