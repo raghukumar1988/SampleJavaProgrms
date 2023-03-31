@@ -3,7 +3,7 @@ package java8features;
 import java.util.ArrayList;
 import java.util.List;
 /*must visit - https://www.baeldung.com/java-8-interview-questions */
-/*Java Stream doesn-t store data, it operates on the source data structure (collection and array)
+/*Java Stream does not store data, it operates on the source data structure (collection and array)
 and produce pipelined data that we can use and perform specific operations.
 Example:  we can create a stream from the list and filter it based on a condition.*/
 

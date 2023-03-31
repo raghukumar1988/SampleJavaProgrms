@@ -31,5 +31,8 @@ public class ArmstrongNumber7 {
         }
     }
 }
-
+   /* A number is called an Armstrong number
+   if it is equal to sum of its digits each raised to the power of number of digits in it.
+        For example: 153, 371, 407, 9474, 54748 are some Armstrong numbers.
+        153 = 1^3 + 5^3 + 3^3 = 1 + 125 + 27 = 153 */
 // Refer - https://javaconceptoftheday.com/armstrong-number-in-java/

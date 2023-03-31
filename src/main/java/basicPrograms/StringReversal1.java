@@ -6,15 +6,20 @@ public class StringReversal1 {
 
 	public static void main(String[] args) {
 		String str = "MyJava";
-		reverseString1(str); //using StringBuffer append method
-		reverseString11(str); //using StringBuilder insert method
-		reverseStringUsingBuilder(str);// using reverse method
-		System.out.println("Using recursive method "+recursiveMethod(str));//recursive method
+		reverseString1(str); //using StringBuffer append method 1
+		reverseString11(str); //using StringBuilder insert method 2
+		reverseStringUsingBuilder(str);// using reverse method 3
+		System.out.println("Using recursive method "+recursiveMethod(str));//recursive method 4
 	}
-
-	private static void reverseStringUsingBuilder(String str) {
-		StringBuilder stringBuilder= new StringBuilder(str);
-		System.out.println("Using reverse method "+stringBuilder.reverse());
+	private static void reverseString1(String str) {
+		StringBuffer revString = new StringBuffer();  // StringBuffer is legacy synchronised class
+		// String revString = "";
+		char[] charArray = str.toCharArray();
+		for (int i = charArray.length - 1; i >= 0; i--) {
+			// revString += charArray[i]; //using String assignment operator
+			revString.append(charArray[i]); // using StringBuffer append method
+		}
+		System.out.println("Reverse using StringBuffer append "+revString);
 	}
 
 	private static void reverseString11(String str) {
@@ -29,15 +34,9 @@ public class StringReversal1 {
 		System.out.println("Reverse using insert method "+revString);
 	}
 
-	private static void reverseString1(String str) {
-		StringBuffer revString = new StringBuffer();  // StringBuffer is legacy synchronised class
-		// String revString = "";
-		char[] charArray = str.toCharArray();
-		for (int i = charArray.length - 1; i >= 0; i--) {
-			// revString += charArray[i]; //using String assignment operator
-			revString.append(charArray[i]); // using StringBuffer append method
-		}
-		System.out.println("Reverse using StringBuffer append "+revString);
+	private static void reverseStringUsingBuilder(String str) {
+		StringBuilder stringBuilder= new StringBuilder(str);
+		System.out.println("Using reverse method "+stringBuilder.reverse());
 	}
 
 	static String recursiveMethod(String str) {

@@ -23,10 +23,10 @@ class DomesticAnimal extends WildAnimal {
         System.out.println("Inside Domestic Animal");
     }
 
-    @Override
+    /*@Override
     public void getColor() {
         System.out.println("Inside Domestic Animal");
-    }
+    }*/
 
     @Override
     public void getSize() {
