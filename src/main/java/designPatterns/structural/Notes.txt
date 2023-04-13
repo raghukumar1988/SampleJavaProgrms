@@ -1,0 +1,54 @@
+Refer here : https://refactoring.guru/design-patterns/java
+
+                        #############  Structural design patterns  ############
+
+Adapter Pattern:
+    Adapter is a structural design pattern, which allows incompatible objects to collaborate.
+    The Adapter acts as a wrapper between two objects.
+    It catches calls for one object and transforms them to format and interface recognizable by the second object.
+
+Bridge Pattern:
+    Bridge is a structural design pattern that divides business logic
+    or huge class into separate class hierarchies that can be developed independently.
+
+    One of these hierarchies (often called the Abstraction) will get a reference to an object of the second hierarchy (Implementation).
+    The abstraction will be able to delegate some (sometimes, most) of its calls to the implementations object.
+    Since all implementations will have a common interface, they’d be interchangeable inside the abstraction.
+
+Composite Pattern:
+    Composite is a structural design pattern that allows composing objects into a tree-like structure
+    and work with it as if it was a singular object.
+
+    Composite became a pretty popular solution for the most problems that require building a tree structure.
+    Composite’s great feature is the ability to run methods recursively over the whole tree structure and sum up the results.
+
+Decorator Pattern:
+    Decorator is a structural pattern that allows adding new behaviors to objects dynamically
+    by placing them inside special wrapper objects, called decorators.
+
+    Using decorators you can wrap objects countless number of times since both target objects
+    and decorators follow the same interface.
+    The resulting object will get a stacking behavior of all wrappers.
+
+Facade Pattern:
+    Facade is a structural design pattern that provides a simplified (but limited) interface
+    to a complex system of classes, library or framework.
+
+    While Facade decreases the overall complexity of the application,
+    it also helps to move unwanted dependencies to one place.
+
+Flyweight Pattern:
+    Flyweight is a structural design pattern that allows programs to support vast quantities of objects
+    by keeping their memory consumption low.
+
+    The pattern achieves it by sharing parts of object state between multiple objects.
+    In other words, the Flyweight saves RAM by caching the same data used by different objects.
+
+Proxy Pattern:
+    Proxy is a structural design pattern that provides an object that acts as a substitute
+    for a real service object used by a client.
+     A proxy receives client requests, does some work (access control, caching, etc.)
+     and then passes the request to a service object.
+
+    The proxy object has the same interface as a service,
+    which makes it interchangeable with a real object when passed to a client.

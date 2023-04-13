@@ -55,7 +55,8 @@ public class StringReversal1 {
 	6th Call ->  ((((recursiveMethod("a") + "v") + "a") + "J")+"y") + "M"*/
 	
 	
-	/*This method takes the first character of a string (str.charAt(0)) and puts it at the end of the string. And then calls itself on the remainder of the string (str.substring(1)).
+	/*This method takes the first character of a string (str.charAt(0)) and puts it at the end of the string.
+	And then calls itself on the remainder of the string (str.substring(1)).
 	 *  Finally adds these two things to get the reverse of the passed string (recursiveMethod(str.substring(1)) + str.charAt(0)).
 	 *   When the passed string is one character or less (str.length() <= 1), it stops calling itself and just returns the string passed.
 */

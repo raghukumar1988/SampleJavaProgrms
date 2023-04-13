@@ -34,6 +34,11 @@ public class OptionalExample32 {
         Optional<String> opt = Optional.of("Ramesh");
         String name = opt.get();
         System.out.println(name);
+
+        Optional<String> empty = Optional.empty();
+        String name2 = empty.get();
+        System.out.println(name2);
+
     }
 
     // If a value is present, invoke the specified consumer with the value, otherwise do nothing.
