@@ -1,5 +1,7 @@
 package basicPrograms;
 
+import org.junit.jupiter.api.Test;
+
 class LowestNumber6 {
     static{ // static block is called even before the main method
         System.out.println("Inside static block.."); // check the order of invocation by keeping breakpoints
@@ -34,4 +36,6 @@ class LowestNumber6 {
         }
         System.out.println(max);
     }
+
+
 }

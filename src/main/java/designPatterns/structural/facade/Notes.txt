@@ -1,0 +1,21 @@
+Facade Pattern:
+Facade is a structural design pattern that provides a simplified (but limited) interface
+to a complex implementation of classes, library or framework.
+
+The facade pattern is useful when we have a complex system that we want to
+expose to clients in a simplified way.
+
+Its purpose is to hide internal complexity behind a single interface that appears
+simple from the outside.
+
+Real world facade examples:
+1.start a computer, all we have to do is press the start button.
+We really do not care what all things go inside the computer hardware and software
+2.dataSource.getConnection()
+-internally a lot of things happen such as loading the driver,
+creating connection or fetching connection from pool, update stats etc..
+
+Challenges with facade design pattern:
+1. Additional layer of coding.
+2. When the internal structure of a subsystem/underlying implementation changes,
+you need to incorporate the changes in the facade layer also.
