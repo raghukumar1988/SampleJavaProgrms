@@ -8,6 +8,29 @@ public class StreamFlatMapExample {
     }
 
     private static void flatMapExampleWithStreamMerge() {
+        mergeStreamsUsingFlatMap();
+        convertStringtoIntegerStreamAndPrintUsingFlatMap();
+    }
+
+    private static void convertStringtoIntegerStreamAndPrintUsingFlatMap() {
+        Stream.of("1", "2", "A", "4")
+                //.map(StreamMapExamples::parseStringValuesAsStream)
+                .flatMap(StreamFlatMapExample::parseStringValuesAsStream)
+                .forEach(System.out::println);
+    }
+
+    private static Stream<Integer> parseStringValuesAsStream(String s) {
+        int number = 0;
+        try {
+            number = Integer.parseInt(s);
+        } catch (NumberFormatException ex) {
+            System.out.println("Unable to parse given string -->" + s);
+            System.out.println("Exception Occured" + ex);
+        }
+        return Stream.of(number);
+    }
+
+    private static void mergeStreamsUsingFlatMap() {
         Stream<String> nameList1 = Stream.of("A", "B", "C");
         Stream<String> nameList2 = Stream.of("D", "E", "F");
         Stream<String> nameList3 = Stream.of("G", "B", "H");

@@ -1,28 +1,28 @@
-package java8features;
+package java8features.streams;
 
 import java.util.*;
-import java.util.function.IntFunction;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class Streams7 {
+public class StreamsCollectorsExample {
     public static void main(String[] args) {
-        //Collectors 1
+        //Collectors 1 - toList
         Stream<Integer> integerStream= Stream.of(12,13,14,15);
         List<Integer> streamtoList= integerStream.collect(Collectors.toList());
         streamtoList.forEach(System.out::println);
 
-        //Collectors 2
+        //Collectors 2 - toMap
         Stream<Integer> integerStream2= Stream.of(12,13,14,15);
         Map<Integer,Integer> streamtomap= integerStream2.collect(Collectors.toMap(i->i, i->i+10));
         streamtomap.forEach((k,v) -> System.out.println("Key = " + k + ", Value = " + v));
 
-        //Collectors 3
+        //Collectors 3 - joining
         List<String>strings = Arrays.asList("abc", "", "bc", "efg", "abcd","", "jkl");
         String mergedString = strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.joining(", "));
         System.out.println("Merged String: " + mergedString);
 
-        // unmodifiable maps - introduced in Java 10
+        // Collector with unmodifiable maps - introduced in Java 10
+        // This is equal to immutable map as we don't have reference to underlying map
         // Refer -  https://howtodoinjava.com/java/collections/java-immutable-and-unmodifiable-maps/#2-unmodifiable-maps
         Stream<Integer> integerStream3= Stream.of(12,13,14,15);
         Map<Integer,Integer> streamToUnmodifiableMap= integerStream3.collect(Collectors.toUnmodifiableMap(i->i, i->i+10));
@@ -75,18 +75,6 @@ public class Streams7 {
         System.out.println("Lowest number in List : " + stats.getMin());
         System.out.println("Sum of all numbers : " + stats.getSum());
         System.out.println("Average of all numbers : " + stats.getAverage());
-
-        // Stream to Array
-        Stream<Integer> intStream = Stream.of(1,2,3,4);
-        int[] intArray=  intStream.mapToInt(Integer::valueOf).toArray();
-        //Integer[] intArray = intStream.toArray(Integer[]::new); // simplified version of below
-        /*Integer[] intArray = intStream.toArray(new IntFunction<Integer[]>() {
-            @Override
-            public Integer[] apply(int value) {
-                return new Integer[value];
-            }
-        });*/
-        System.out.println(Arrays.toString(intArray)); //prints [1, 2, 3, 4]
 
     }
 }

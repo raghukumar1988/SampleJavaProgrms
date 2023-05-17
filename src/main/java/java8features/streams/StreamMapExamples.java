@@ -17,15 +17,17 @@ public class StreamMapExamples {
         convertStringtoIntegerAndPrint();
         convertStringWithNulltoIntegerAndPrint();
         convertStringWithNonNumerictoIntegerAndPrint();
+        convertStringWithNonNumerictoIntegerAndPrintWithFlatMap();
     }
 
-    private static void convertStringWithNonNumerictoIntegerAndPrint() {
+    private static void convertStringWithNonNumerictoIntegerAndPrintWithFlatMap() {
         Stream.of("1", "2", "A", "4")
-                .map(StreamMapExamples::parseStringValues)
+                //.map(StreamMapExamples::parseStringValuesAsStream)
+                .flatMap(StreamMapExamples::parseStringValuesAsStream)
                 .forEach(System.out::println);
     }
 
-    private static Stream<Integer> parseStringValues(String s) {
+    private static Stream<Integer> parseStringValuesAsStream(String s) {
         int number = 0;
         try {
             number = Integer.parseInt(s);
@@ -34,6 +36,23 @@ public class StreamMapExamples {
             System.out.println("Exception Occured" + ex);
         }
         return Stream.of(number);
+    }
+
+    private static void convertStringWithNonNumerictoIntegerAndPrint() {
+        Stream.of("1", "2", "A", "4")
+                .map(StreamMapExamples::parseStringValues)
+                .forEach(System.out::println);
+    }
+
+    private static Integer parseStringValues(String s) {
+        int number = 0;
+        try {
+            number = Integer.parseInt(s);
+        } catch (NumberFormatException ex) {
+            System.out.println("Unable to parse given string -->" + s);
+            System.out.println("Exception Occured" + ex);
+        }
+        return number;
     }
 
 
