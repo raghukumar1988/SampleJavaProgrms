@@ -1,5 +1,5 @@
 
-package java8features;
+package java8features.streams;
 
 import java.util.ArrayList;
 import java.util.List;
