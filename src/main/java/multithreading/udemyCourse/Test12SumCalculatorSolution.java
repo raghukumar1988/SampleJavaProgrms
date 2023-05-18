@@ -103,7 +103,7 @@ public class Test12SumCalculatorSolution {
             return future.get();
         } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
-            return 0; // DANGEROUS: Ignored exceptions.
+            return 0; // DANGEROUS: Ignored coreconcepts.exceptions.
         }
     }
 } 

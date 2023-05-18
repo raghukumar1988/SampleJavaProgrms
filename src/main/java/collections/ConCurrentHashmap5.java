@@ -1,6 +1,6 @@
 package collections;
 
-import comparators.Country;
+import collections.comparators.Country;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

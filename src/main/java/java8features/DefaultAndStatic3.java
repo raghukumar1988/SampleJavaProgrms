@@ -39,7 +39,7 @@ class DefaultAndStatic3 implements FirstInterface, SecondInterface, ThirdInterfa
 	public void showText() {
 		//FirstInterface.super.showText(); //to reuse the implementation of FirstInterface
 		SecondInterface.super.showText(); //to reuse the implementation of SecondInterface
-		ThirdInterface.viewText(); //to call static method
+		viewText(); //to call static method
 		System.out.println("Some custom implementation");
 
 	}

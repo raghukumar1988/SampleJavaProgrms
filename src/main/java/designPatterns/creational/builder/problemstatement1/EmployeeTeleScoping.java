@@ -3,9 +3,9 @@ package designPatterns.creational.builder.problemstatement1;
 /* Must go - https://howtodoinjava.com/design-patterns/creational/builder-pattern-in-java/
 https://howtodoinjava.com/lombok/lombok-builder-annotation/*/
 /* Uses:
-        The builder pattern is a good choice when designing classes whose constructors or static factories
+        The builder pattern is a good choice when designing classes whose coreconcepts.constructors or static factories
         would have more than a handful of parameters.
-        In other terms builder pattern allows to AVOID telescopic constructors
+        In other terms builder pattern allows to AVOID telescopic coreconcepts.constructors
         when we want to build objects with multiple parameters.  */
 
 /*  Drawbacks:

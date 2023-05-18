@@ -22,7 +22,7 @@ public class ImmutableVsUnModifiableMapExample {
         Map<Integer, String> immutableMapUsingCopyOf = Map.copyOf(cityMap);
         immutableMap.forEach((k, v) -> System.out.println("CopyOf Key is " + k + " Value is  " + v));
         //immutableMapUsingCopyOf.put(4,"Delhi");//throws UnsupportedOperationException in runtime
-        cityMap.put(4, "Delhi"); // This will not be added in immutable map
+        cityMap.put(4, "Delhi"); // This will not be added in coreconcepts.immutable map
         cityMap.forEach((k, v) -> System.out.println("NOrmal Map Key is " + k + " Value is  " + v));
         immutableMap.forEach((k, v) -> System.out.println("CopyOf Map Key is " + k + " Value is  " + v));
 

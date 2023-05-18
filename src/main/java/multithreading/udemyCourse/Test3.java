@@ -5,7 +5,7 @@ public class Test3 {
         // Because MyThread extends the Thread
         // class, you can call the start() method
         // directly, as it is also a member of this
-        // class, courtesy inheritance relation.
+        // class, courtesy coreconcepts.inheritance relation.
         MyThread thr = new MyThread();
         thr.start();
 

@@ -1,10 +1,9 @@
 package collections;
 
-import comparators.Country;
+import collections.comparators.Country;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 class HashmapIteration4 {
     public static void main(String args[]) {
