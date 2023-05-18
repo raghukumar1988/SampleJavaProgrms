@@ -17,14 +17,16 @@ public class StreamToArrayExample {
 
 
         // for difference check the javadoc; we can pass desired type as argument
-        //Integer[] intArray = intStream.toArray(Integer[]::new); // simplified version of below
         Stream<Integer> intStream2 = Stream.of(1,2,3,4);
-        Integer[] intArray = intStream2.toArray(new IntFunction<Integer[]>() {
+        //Integer[] intArray = intStream.toArray(Integer[]::new); // simplified with method reference
+        //Integer[] intArray = intStream.toArray(value -> new Integer[value]); //simplified with Lambda
+        Integer[] intArray = intStream2.toArray(new IntFunction<Integer[]>() { // legacy anonymous impl
             @Override
             public Integer[] apply(int value) {
                 return new Integer[value];
             }
         });
+        System.out.println(Arrays.toString(intArray));
 
     }
 }
