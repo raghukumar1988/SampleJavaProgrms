@@ -22,13 +22,6 @@ interface ThirdInterface {
 }
 
 class DefaultAndStatic3 implements FirstInterface, SecondInterface, ThirdInterface {
-	public static void main(String[] args) {
-		DefaultAndStatic3 te = new DefaultAndStatic3();
-		te.readText();// normal interface implemented method
-		te.showText();
-		//ThirdInterface.viewText(); // to call static method
-
-	}
 
 	@Override
 	public void readText() {
@@ -39,8 +32,15 @@ class DefaultAndStatic3 implements FirstInterface, SecondInterface, ThirdInterfa
 	public void showText() {
 		//FirstInterface.super.showText(); //to reuse the implementation of FirstInterface
 		SecondInterface.super.showText(); //to reuse the implementation of SecondInterface
-		viewText(); //to call static method
+		ThirdInterface.viewText(); //to call static method
 		System.out.println("Some custom implementation");
+	}
+
+	public static void main(String[] args) {
+		DefaultAndStatic3 te = new DefaultAndStatic3();
+		te.readText();// normal interface implemented method
+		te.showText();
+		//ThirdInterface.viewText(); // to call static method
 
 	}
 	
