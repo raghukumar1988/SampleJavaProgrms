@@ -1,4 +1,4 @@
-package collections.comparators;
+package collections.sorting.model;
 
 import lombok.*;
 

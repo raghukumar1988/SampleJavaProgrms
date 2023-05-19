@@ -1,25 +1,18 @@
-package collections.comparators.comparable;
+package collections.sorting.model;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @Getter
 @Setter
 @ToString
+@NoArgsConstructor
+@AllArgsConstructor
 public class AccountDetails implements Comparable<AccountDetails> {
 
     private Long accNumber;
     private String accHolderName;
     private Double accBalance;
     private boolean isActive;
-
-    AccountDetails(Long accNumber,String name,Double accBalance,boolean isActive){
-        this.accNumber=accNumber;
-        this.accHolderName=name;
-        this.accBalance= accBalance;
-        this.isActive=isActive;
-    }
 
     /*@Override
     public int compareTo(AccountDetails o) {

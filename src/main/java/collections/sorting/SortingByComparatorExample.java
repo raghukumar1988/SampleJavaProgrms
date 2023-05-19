@@ -1,4 +1,6 @@
-package collections.comparators;
+package collections.sorting;
+
+import collections.sorting.model.Country;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -6,7 +8,7 @@ import java.util.Comparator;
 import java.util.List;
 
 
-public class TestComparator {
+public class SortingByComparatorExample {
 
     public static void main(String[] args) {
         List<Country> al = new ArrayList<Country>();

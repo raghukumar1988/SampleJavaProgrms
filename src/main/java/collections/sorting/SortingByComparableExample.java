@@ -1,11 +1,15 @@
-package collections.comparators.comparable;
+package collections.sorting;
+
+
+
+import collections.sorting.model.AccountDetails;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class TestComparable {
+public class SortingByComparableExample {
     public static void main(String[] args) {
 
         sortCustomAccountDetailsListByComparable();
