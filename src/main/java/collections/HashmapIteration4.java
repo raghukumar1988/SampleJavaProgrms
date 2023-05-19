@@ -15,8 +15,8 @@ class HashmapIteration4 {
         map.put(45, new Country(11, "Nigeria"));
         for (Map.Entry<Integer, Country> entry : map.entrySet()) { //iterating based on map entires
             System.out.println("from EntrySet Key-->" + entry.getKey() + "Value-->" + entry.getValue().getCountryName());
-             //map.put(35,new Country(15, "Dubai"));
-             //map.remove(45);
+            //map.put(35,new Country(15, "Dubai"));
+            //map.remove(45);
         }
         for (Integer key : map.keySet()) {//iterating based on map keys
             System.out.println("from keyset-->" + map.get(key).getCountryName());

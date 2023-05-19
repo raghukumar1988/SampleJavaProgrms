@@ -1,20 +1,29 @@
 package basicPrograms;
 
-import org.junit.jupiter.api.Test;
+import java.util.Arrays;
 
 class LowestNumber6 {
-    static{ // static block is called even before the main method
-        System.out.println("Inside static block.."); // check the order of invocation by keeping breakpoints
+    // static block is called even before the main method
+    static {
+        // check the order of invocation by keeping breakpoints
+        System.out.println("Inside static block..");
     }
 
     public static void main(String args[]) {
-        int a[] = {33, 3, 4, 5};// declaring and initializing an array
+        int[] a = {33, 3, 4, 5};// declaring and initializing an array
         printMimimumNumber(a);// passing array to method
         printMaximumNumber(a);
+        printMinAndMaxUsingSortMethod(a);
+    }
+
+    private static void printMinAndMaxUsingSortMethod(int[] a) {
+        Arrays.sort(a);
+        System.out.println("Min is " + a[0]);
+        System.out.println("Max is " + a[a.length - 1]);
     }
 
     // creating a method which receives an array as a parameter
-    static void printMimimumNumber(int arr[]) {
+    static void printMimimumNumber(int[] arr) {
         int min = arr[0];
         /* for (int i : arr) {   //simplified version
             if (min > i)
@@ -28,10 +37,10 @@ class LowestNumber6 {
     }
 
     private static void printMaximumNumber(int[] a) {
-        int max= a[0];
-        for(Integer num:a){
-            if(num>max){
-                max=num;
+        int max = a[0];
+        for (Integer num : a) {
+            if (num > max) {
+                max = num;
             }
         }
         System.out.println(max);

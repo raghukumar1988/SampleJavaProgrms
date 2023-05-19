@@ -14,11 +14,20 @@ public class TestComparator {
         al.add(new Country(12, "Nepal"));
         al.add(new Country(33, "Singapore"));
         al.add(new Country(24, "Malaysia"));
+
         al.forEach(county -> System.out.println("before Sort::" + county.getCountryId() + "  " + county.getCountryName()));
         al.sort(nameCompare);
         al.forEach(country -> System.out.println("After name Sort::" + country.getCountryId() + " " + country.getCountryName()));
-        Collections.sort(al, new CompareById()); // Not recommended, Use list.sort instead
-        al.forEach(country -> System.out.println("After id Sort::" + country.getCountryId() + " " + country.getCountryName()));
+
+        al.sort(idCompare);
+        al.forEach(country -> System.out.println("After Id Sort::" + country.getCountryId() + " " + country.getCountryName()));
+
+        al.sort(nameComp);
+        al.forEach(country -> System.out.println("After name Sort  using Java 8 approach::" + country.getCountryId() + " " + country.getCountryName()));
+
+        Collections.sort(al, new CompareById()); // IMP --> Not recommended, Use list.sort instead
+        Collections.sort(al, idCompare); // IMP --> Not recommended, Use list.sort instead
+        al.forEach(country -> System.out.println("After id Sort in deprecated way::" + country.getCountryId() + " " + country.getCountryName()));
 
     }
 
@@ -26,12 +35,9 @@ public class TestComparator {
     public static Comparator<Country> idCompare = new Comparator<Country>() {
         public int compare(Country o1, Country o2) {
             //return o1.getCountryId() - o2.getCountryId(); // older way
-            return Integer.compare( o1.getCountryId() , o2.getCountryId());
+            return Integer.compare(o1.getCountryId(), o2.getCountryId());
         }
     };
-
-    // lamda expression for Anonymous Impl
-    public static Comparator<Country> nameCompare = (o1, o2) -> o1.getCountryName().compareTo(o2.getCountryName());
 
     //Normal implementation recommended approach
     public static class CompareById implements Comparator<Country> {
@@ -41,9 +47,13 @@ public class TestComparator {
         }
     }
 
-    //Java 8 approach
-    public static Comparator<Country> nameComp= Comparator.comparing(o -> o.getCountryName());
+    // impl  using lambda expression & functional interface
+    public static Comparator<Country> nameCompare = (o1, o2) -> o1.getCountryName().compareTo(o2.getCountryName());
 
-    //  Read about Comparator  with mutiple fields
+    //Java 8 approach -- IMP -- No Need to override compareTo method
+    public static Comparator<Country> nameComp = Comparator.comparing(o -> o.getCountryName());
+
+
+    //  TODO - explore variants of thenComparing
 
 }
