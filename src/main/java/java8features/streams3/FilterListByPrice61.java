@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class FilterListByPrice {
+public class FilterListByPrice61 {
     public static void main(String[] args) {
 
         List<Product> productsList = getStubbedProductList();
@@ -22,25 +22,26 @@ public class FilterListByPrice {
     }
 
     private static void filterByIdMapByIntMapConvertToList(List<Product> productsList) {
-        /* Collections in Java can not store the primitive values directly.
-        They can store only instances/objects.Using boxed() method of IntStream,
-                we can get a stream of wrapper objects which can be collected by Collectors methods. */
+        /* Collections in Java can not store the primitive values directly instead they can store only instances/objects.
+        Using boxed() method of IntStream, we can get a stream of wrapper objects which can be collected by Collectors methods. */
         List<Integer> idList = productsList.stream()
-                //.mapToInt(product -> product.getId())
-                .mapToInt(Product::getId)
+                //.mapToInt(product -> product.getId()) // if I enable this, I need to use boxed() ; Check why? TODO
+                .map(Product::getId)
                 .filter(product -> product > 3)
-                .boxed() // concentrate here Refer - https://howtodoinjava.com/java8/java8-boxed-intstream/
+                //.boxed() // concentrate here -  Refer - https://howtodoinjava.com/java8/java8-boxed-intstream/
                 .collect(Collectors.toList());
         System.out.println(idList);
+        System.out.println("################################################");
     }
 
     private static void filterByIdMapByMethodAndCollectAsList(List<Product> productsList) {
         List<Product> modifiedProductList = productsList.stream()
                 .filter(product -> product.getId() < 3)
-                .map(FilterListByPrice::modifyProduct)
+                .map(FilterListByPrice61::modifyProduct)
                 //.map(product -> modifyProduct(product))
                 .collect(Collectors.toList());
         System.out.println(modifiedProductList);
+        System.out.println("################################################");
     }
 
     private static void filterProductAndMapByIdConvertAsList(List<Product> productsList) {
@@ -51,6 +52,7 @@ public class FilterListByPrice {
                 .map(product -> product.getId() * 2)
                 .collect(Collectors.toList());
         System.out.println(idDoubledList);
+        System.out.println("################################################");
     }
 
     private static void filterProductByPriceAndCovertAsSet(List<Product> productsList) {
@@ -58,6 +60,7 @@ public class FilterListByPrice {
                 .filter(product -> product.getPrice() > 28000f)
                 .collect(Collectors.toSet());
         System.out.println(productsSet);
+        System.out.println("################################################");
     }
 
     private static void filterProductByIdAndPrint(List<Product> productsList) {
@@ -65,12 +68,14 @@ public class FilterListByPrice {
                 .filter(product -> product.getId() < 3)
                 .collect(Collectors.toList());
         System.out.println(top2Products);
+        System.out.println("################################################");
     }
 
     private static void filterProductByPriceAndIterate(List<Product> productsList) {
         productsList.stream()
                 .filter(product -> product.getPrice() == 30000)
                 .forEach(product -> System.out.println(product.getPrice()));
+        System.out.println("################################################");
     }
 
     private static Product modifyProduct(Product product) {
@@ -92,5 +97,6 @@ public class FilterListByPrice {
         productsList.add(new Product(5, "Apple Laptop", 90000f));
         return productsList;
     }
+
 
 }

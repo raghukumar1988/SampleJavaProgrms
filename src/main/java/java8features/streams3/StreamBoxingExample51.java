@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class StreamBoxingExample {
+public class StreamBoxingExample51 {
     public static void main(String[] args) {
 
         mapExampleWithForEach();
@@ -21,6 +21,16 @@ public class StreamBoxingExample {
                 .boxed() // will wrap to primitives to wrapper objects
                 .collect(Collectors.toList());
         System.out.println(doubledIntegerList);
+    }
+
+    private static void mapTOIntExampleWithoutBoxing() {
+        List<String> list = Arrays.asList("3", "6", "8", "14", "15");
+        // Using Stream mapToInt(ToIntFunction mapper) and displaying the corresponding IntStream
+        //list.stream().mapToInt(num -> Integer.parseInt(num))
+        list.stream()
+                .mapToInt(Integer::parseInt)
+                .filter(num -> num % 3 == 0)
+                .forEach(System.out::println);
     }
 
     private static void mapExampleWithCollect() {
@@ -42,13 +52,4 @@ public class StreamBoxingExample {
                 .forEach(System.out::println);
     }
 
-    private static void mapTOIntExampleWithoutBoxing() {
-        List<String> list = Arrays.asList("3", "6", "8", "14", "15");
-        // Using Stream mapToInt(ToIntFunction mapper) and displaying the corresponding IntStream
-        //list.stream().mapToInt(num -> Integer.parseInt(num))
-        list.stream()
-                .mapToInt(Integer::parseInt)
-                .filter(num -> num % 3 == 0)
-                .forEach(System.out::println);
-    }
 }

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class StreamNoMatchAnyMatchAllMatchExample {
+public class StreamNoMatchAnyMatchAllMatchExample64 {
     public static void main(String[] args) {
         anyMatchByPredicate();
         noneMatchByPredicate(); // works opposite of anyMatch
@@ -17,7 +17,7 @@ public class StreamNoMatchAnyMatchAllMatchExample {
         Predicate<Student> predicate1= s->s.getStuName().startsWith("A");
         Predicate<Student> predicate2= s->s.getStuAge()<40;
         Predicate<Student> predicate3 = s->s.getStuAge()<40 && s.getStuName().startsWith("P");
-        List<Student> studentList = StreamNoMatchAnyMatchAllMatchExample.getStudents();
+        List<Student> studentList = StreamNoMatchAnyMatchAllMatchExample64.getStudents();
         System.out.println(studentList.stream().allMatch(predicate1));
         System.out.println(studentList.stream().allMatch(predicate2));
         System.out.println(studentList.stream().allMatch(predicate3));
@@ -32,7 +32,7 @@ public class StreamNoMatchAnyMatchAllMatchExample {
     private static void noneMatchByPredicate() {
         Predicate<Student> predicate1= s->s.getStuName().startsWith("S");
         Predicate<Student> predicate2= s->s.getStuAge()<28 && s.getStuName().startsWith("Z");
-        List<Student> studentList = StreamNoMatchAnyMatchAllMatchExample.getStudents();
+        List<Student> studentList = StreamNoMatchAnyMatchAllMatchExample64.getStudents();
         System.out.println(studentList.stream().noneMatch(predicate1));
         System.out.println(studentList.stream().noneMatch(predicate2));
         System.out.println("#######################################");
@@ -47,7 +47,7 @@ public class StreamNoMatchAnyMatchAllMatchExample {
     private static void anyMatchByPredicate() {
         Predicate<Student> predicate1 = s->s.getStuName().startsWith("S");
         Predicate<Student> predicate2 = s-> s.getStuAge()<28 && s.getStuName().startsWith("Z");
-        List<Student> studentList= StreamNoMatchAnyMatchAllMatchExample.getStudents();
+        List<Student> studentList= StreamNoMatchAnyMatchAllMatchExample64.getStudents();
         System.out.println(studentList.stream().anyMatch(predicate1));
         System.out.println(studentList.stream().anyMatch(predicate2));
         System.out.println("##########################################");

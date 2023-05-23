@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class StreamArrayListSecondHighestSalaryExample {
+public class StreamArrayListSecondHighestSalaryExample71 {
     public static void main(String[] args) {
         List<Employee1> employeeList = new ArrayList<>();
         employeeList.add(new Employee1(111, "Jiya Brein", 32, "Female", "HR", 2011, 25000.0));

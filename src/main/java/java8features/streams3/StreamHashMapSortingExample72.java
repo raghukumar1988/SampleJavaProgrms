@@ -4,7 +4,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
-public class StreamHashMapSortingExample {
+public class StreamHashMapSortingExample72 {
     public static void main(String[] args) {
         sortMapByUsingComparingMethodOfComparator();
         sortMapByUsingComparingByValueMethodOfMapDotEntry();

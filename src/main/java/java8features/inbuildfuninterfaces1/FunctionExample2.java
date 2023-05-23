@@ -15,11 +15,12 @@ public class FunctionExample2 {
         System.out.println(" Centigrade to Fahrenheit: " + centigradeToFahrenheitInt.apply(6));
 
         // String to an integer
-        Function < String, Integer > stringToInt = x -> Integer.valueOf(x);
+        //Function < String, Integer > stringToInt = x -> Integer.valueOf(x);
+        Function < String, Integer > stringToInt = Integer::valueOf;
         System.out.println(" String to Int: " + stringToInt.apply("4"));
 
         // Entity to DTO
-        Function < PersonEntity, PersonDTO > function = (entity) -> {
+        Function <PersonEntity, PersonDTO> function = (entity) -> {
             return new PersonDTO(entity.getName(), entity.getAge());
         };
         PersonDTO personDTO = function.apply(new PersonEntity("ramesh", 20));

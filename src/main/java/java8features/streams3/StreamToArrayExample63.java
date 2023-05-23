@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.function.IntFunction;
 import java.util.stream.Stream;
 
-public class StreamToArrayExample {
+public class StreamToArrayExample63 {
     public static void main(String[] args) {
 
         Stream<Integer> intStream = Stream.of(1,2,3,4);

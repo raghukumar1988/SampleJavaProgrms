@@ -7,12 +7,17 @@ import java.util.function.Predicate;
 public class PredicateExample1 {
     public static void main(String[] args) {
 
-        Predicate< Person > predicate = (person) -> person.getAge() > 28;
+        Predicate<Person> predicate = person -> person.getAge() > 28;
 
         boolean result = predicate.test(new Person("ramesh", 29));
         System.out.println(result);
 
         boolean result2 = predicate.test(new Person("ramesh", 27));
         System.out.println(result2);
+
+        Predicate<String> predicate2= str->str.contains("R");
+        System.out.println(predicate2.test("Raghu"));
+        System.out.println(predicate2.test("Sonu"));
+
     }
 }

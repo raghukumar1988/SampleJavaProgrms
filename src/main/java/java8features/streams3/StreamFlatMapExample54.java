@@ -2,7 +2,7 @@ package java8features.streams3;
 
 import java.util.stream.Stream;
 
-public class StreamFlatMapExample {
+public class StreamFlatMapExample54 {
     public static void main(String[] args) {
         flatMapExampleWithStreamMerge();
     }
@@ -15,7 +15,7 @@ public class StreamFlatMapExample {
     private static void convertStringtoIntegerStreamAndPrintUsingFlatMap() {
         Stream.of("1", "2", "A", "4")
                 //.map(StreamMapExamples::parseStringValuesAsStream)
-                .flatMap(StreamFlatMapExample::parseStringValuesAsStream)
+                .flatMap(StreamFlatMapExample54::parseStringValuesAsStream)
                 .forEach(System.out::println);
     }
 

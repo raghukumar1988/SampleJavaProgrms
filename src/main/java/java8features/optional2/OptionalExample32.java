@@ -4,88 +4,107 @@ import java.util.Optional;
 
 public class OptionalExample32 {
     public static void main(String[] args) {
-        isPresentOptionalAPI();
-        createEmptyOptionalObject();
-        getOptionalAPI();
-        ifPresentOptionalAPI();
-        orElseOptionalAPI();
-        orElseOptionalAPI();
-        orElseGetOptionalAPI();
-        orElseThrowOptionalAPI();
+        //isPresentOptionalAPI();
+        //ifPresentOrElseOptionalAPI();
+        //orElseOptionalAPI();
+        //orElseGetOptionalAPI();
+        orElseThrowWithDefaultExceptionOptionalAPI();
+        orElseThrowWithCustomEExceptionOptionalAPI(null); // Check junit class
     }
 
-    // The isPresent() method returns an Optional with the specified present non-null value.
+    // The isPresent() method returns true if the value present in Optional
+    // ifPresent() is more convenient to use
     private static void isPresentOptionalAPI() {
-        Optional<String> opt = Optional.of("Ramesh");
-        System.out.println(opt.isPresent());  // true
-    }
 
-    // An empty() static method returns an empty Optional instance.
-    // No value is present for this Optional.
-    private static void createEmptyOptionalObject() {
-        Optional<String> empty = Optional.empty();
-        System.out.println(empty.isPresent()); //false
-
-    }
-
-    //If a value is present in this Optional, returns the value,
-    // otherwise throws NoSuchElementException.
-    private static void getOptionalAPI() {
-        Optional<String> opt = Optional.of("Ramesh");
-        String name = opt.get();
-        System.out.println(name);
-
-        Optional<String> empty = Optional.empty();
-        String name2 = empty.get();
-        System.out.println(name2);
-
-    }
-
-    // If a value is present, invoke the specified consumer with the value, otherwise do nothing.
-    private static void ifPresentOptionalAPI() {
-        // The ifPresent API enables us to run some code on the wrapped value if it is found to be non-null.
-        // Before Optional, we would do something like this:
+        // Java 7 null check
         String name = "Ramesh";
-        if (name != null) {
+        if (null != name) {
             System.out.println(name.length());
         }
-
+        // Java 8 null handling using Optional
         Optional<String> opt = Optional.of("Ramesh");
-        opt.ifPresent(str -> System.out.println(str.length()));
+        if (opt.isPresent()) {
+            System.out.println("Printing value if its present --> " + opt.get().length());
+        }
+        //opt.ifPresent(name -> System.out.println(name.length()));
+
+
+        System.out.println(opt.isPresent());  // not as convenient as ifPresent()
+        /*if(opt.isPresent()){
+            System.out.println("Printing value if its present --> "+ opt.get());
+        }*/
+        opt.ifPresent(s -> System.out.println("Printing value if its present --> " + s)); // new impl
+        // The ifPresent API enables us to run some code on the wrapped value if it is found to be non-null.
+
     }
 
-    // If a value is present, invoke the specified consumer with the value, otherwise do nothing.
+    // If a value is present, performs the given action with the value,
+    // otherwise performs the given empty-based action.
+    private static void ifPresentOrElseOptionalAPI() {
+        Optional<String> empty = Optional.empty();
+        System.out.println(empty.isPresent()); //false
+        empty.ifPresentOrElse(System.out::println, () -> System.out.println("Optional is empty"));
+
+    }
+
+    // If a value is present, returns the value, otherwise returns other.
     private static void orElseOptionalAPI() {
         // With orElse, the wrapped value is returned if it is present and the argument given to
         // orElse is returned if the wrapped value is absent
-        String nullName = null;
+
+        String name = null;
+        // String name = "Raghu"; // uncomment explore the behaviour
+        // String name= "";
 
         // If a value is present, invoke the specified consumer with the value, otherwise do nothing.
-        String name = Optional.ofNullable(nullName).orElse("Ramesh");
-        System.out.println(name);
+        String name1 = Optional.ofNullable(name).orElse("Ramesh");
+        System.out.println("Processing null value using orElse()--> " + name1);
     }
 
-    //Return the value if present, otherwise invoke other and return the result of that invocation.
+    //If a value is present, returns the value,
+    // otherwise returns the result produced by the supplying function.
     private static void orElseGetOptionalAPI() {
-        String nullName = null;
-        String name = Optional.ofNullable(nullName).orElseGet(() -> getRandomName());
+        String name = null;
+        // String name = "Raghu"; // uncomment explore the behaviour
+        String nameResult = Optional.ofNullable(name).orElseGet(OptionalExample32::getRandomNameAsString);
+        System.out.println("Printing Result of orElseGet which returns String --> " + nameResult);
+
+
+        Optional<String> nameOptional = Optional.ofNullable(null);
+        //Optional<String> nameOptional = Optional.ofNullable("Raghu");// uncomment explore the behaviour
+        // Note -- Below does not pass through orElseGet
+        Optional<String> name1 = Optional.of(nameOptional).orElseGet(OptionalExample32::getRandomNameAsOptional);
         //String name = Optional.ofNullable(nullName).orElseGet(() -> "Ramesh");
-        System.out.println(name);
+        System.out.println("Printing Result of orElseGet which returns Optional<String> --> " + name1);
+
     }
 
-    //Return the contained value, if present,
-    // otherwise throw an exception to be created by the provided supplier.
-    private static void orElseThrowOptionalAPI() {
+    //If a value is present, returns the value,
+    // otherwise throws an exception produced by the exception supplying function.
+    private static void orElseThrowWithDefaultExceptionOptionalAPI() {
         // This will throw exception
         String nullName = null;
+        String name = Optional.ofNullable(nullName)
+                .orElseThrow(); // throws default NoSuchElementException
+        System.out.println(name);
+    }
+
+    //If a value is present, returns the value,
+    // otherwise throws an exception produced by the exception supplying function.
+    public static void orElseThrowWithCustomEExceptionOptionalAPI(String nullName) {
         String name = Optional.ofNullable(nullName)
                 .orElseThrow(IllegalArgumentException::new);
         System.out.println(name);
     }
 
 
-    private static String getRandomName() {
+    private static Optional<String> getRandomNameAsOptional() {
+        return Optional.of("Raghu");
+    }
+
+    private static String getRandomNameAsString() {
         return "Raghu";
     }
+
 
 }

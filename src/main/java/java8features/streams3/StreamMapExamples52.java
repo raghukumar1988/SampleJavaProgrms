@@ -6,9 +6,9 @@ import java.util.Objects;
 import java.util.function.Function;
 import java.util.stream.Stream;
 
-public class StreamMapExamples {
+public class StreamMapExamples52 {
     public static void main(String[] args) {
-        mutiplyListElementsBy3AndPrint();
+        multiplyListElementsBy3AndPrint();
         convertToUppercaseAndPrint();
         getLengthOfStringsAndPrint();
         convertStringtoIntegerAndPrint();
@@ -20,7 +20,7 @@ public class StreamMapExamples {
     private static void convertStringWithNonNumerictoIntegerAndPrintWithFlatMap() {
         Stream.of("1", "2", "A", "4")
                 //.map(StreamMapExamples::parseStringValuesAsStream)
-                .flatMap(StreamMapExamples::parseStringValuesAsStream)
+                .flatMap(StreamMapExamples52::parseStringValuesAsStream)
                 .forEach(System.out::println);
     }
 
@@ -32,16 +32,16 @@ public class StreamMapExamples {
             System.out.println("Unable to parse given string -->" + s);
             System.out.println("Exception Occured" + ex);
         }
-        return Stream.of(number);
+        return Stream.of(number); // Observe here and method return type
     }
 
     private static void convertStringWithNonNumerictoIntegerAndPrint() {
         Stream.of("1", "2", "A", "4")
-                .map(StreamMapExamples::parseStringValues)
+                .map(StreamMapExamples52::parseStringValues)
                 .forEach(System.out::println);
     }
 
-    private static Integer parseStringValues(String s) {
+    private static Integer parseStringValues(String s) {  // Utility method
         int number = 0;
         try {
             number = Integer.parseInt(s);
@@ -61,7 +61,7 @@ public class StreamMapExamples {
         System.out.println("#####################################");
     }
 
-    private static Function<String, Integer> getAnInt() {
+    private static Function<String, Integer> getAnInt() { // Utility method
         return Integer::parseInt;
     }
 
@@ -90,7 +90,7 @@ public class StreamMapExamples {
         System.out.println("#####################################");
     }
 
-    private static void mutiplyListElementsBy3AndPrint() {
+    private static void multiplyListElementsBy3AndPrint() {
         List<Integer> list = Arrays.asList(3, 6, 9, 12, 15);
         list.stream()
                 .map(num -> num * 3)

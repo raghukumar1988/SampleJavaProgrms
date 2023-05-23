@@ -1,4 +1,4 @@
-package java8features;
+package java8features.basics1;
 
 import java.util.ArrayList;
 import java.util.List;
