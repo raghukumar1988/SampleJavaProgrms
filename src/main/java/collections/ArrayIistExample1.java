@@ -19,6 +19,7 @@ public class ArrayIistExample1 {
         al.add("TEst3");
         al.add("TEst4");
         al.add("TEst5");
+        //al.add(null); // throws NPE
         al.stream()
                 .sorted(Comparator.reverseOrder())
                 .collect(Collectors.toList())

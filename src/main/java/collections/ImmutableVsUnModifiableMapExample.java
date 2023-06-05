@@ -19,12 +19,14 @@ public class ImmutableVsUnModifiableMapExample {
         cityMap.put(1, "Mumbai");
         cityMap.put(2, "Pune");
         cityMap.put(3, "Bangalore");
-        Map<Integer, String> immutableMapUsingCopyOf = Map.copyOf(cityMap);
-        immutableMap.forEach((k, v) -> System.out.println("CopyOf Key is " + k + " Value is  " + v));
+        Map<Integer, String> immutableMapUsingCopyOf = Map.copyOf(cityMap); // Recommended way
+        immutableMapUsingCopyOf.forEach((k, v) -> System.out.println("Immutable Map Key is " + k + " Value is  " + v));
         //immutableMapUsingCopyOf.put(4,"Delhi");//throws UnsupportedOperationException in runtime
-        cityMap.put(4, "Delhi"); // This will not be added in coreconcepts.immutable map
+        cityMap.put(4, "Delhi"); // This will not be added in immutable map
+        System.out.println("After updating parent map....");
         cityMap.forEach((k, v) -> System.out.println("NOrmal Map Key is " + k + " Value is  " + v));
-        immutableMap.forEach((k, v) -> System.out.println("CopyOf Map Key is " + k + " Value is  " + v));
+        System.out.println();
+        immutableMapUsingCopyOf.forEach((k, v) -> System.out.println("CopyOf Map Key is " + k + " Value is  " + v));
 
     }
 
@@ -37,11 +39,12 @@ public class ImmutableVsUnModifiableMapExample {
         //unmodifiableMap.put(3,"Ramu");// throws UnsupportedOperationException in runtime
         unmodifiableMap.forEach((k, v) -> System.out.println("UMM Key is " + k + " Value is  " + v));
 
-        studentMap.put(4, "NIthran"); // drawaback of unmodifiableMap
+        studentMap.put(4, "NIthran"); // DRAWBACK of unmodifiableMap
+        System.out.println("After updating Parent Map.....");
         studentMap.forEach((k, v) -> System.out.println("Key is " + k + " Value is  " + v));
 
         unmodifiableMap.forEach((k, v) -> System.out.println("UMM Key is " + k + " Value is  " + v));
 
-
+        System.out.println();
     }
 }

@@ -25,16 +25,16 @@ public class HashmapExample31 {
         map.putIfAbsent("ONE", 111);  //Adds key-value pair 'ONE-111' only if it is not present in map
         map.forEach((k, v) -> System.out.println("k = " + k + " v = " + v));
 
-        System.out.println(map.get("TWO"));//Retrieving a value associated with key 'TWO'
-        System.out.println(map.containsKey("ONE")); //Checking whether key  exist in map
-        System.out.println(map.containsValue(2));//Checking whether value  exist in map
-        System.out.println(map.size()); // Checking the number of key-value pairs before clearing the map
+        System.out.println("Getting the value for Key TWO --> "+map.get("TWO"));//Retrieving a value associated with key 'TWO'
+        System.out.println("Check if Map contains Key ONE --> "+map.containsKey("ONE")); //Checking whether key  exist in map
+        System.out.println("Check if Map contains value 2 --> "+map.containsValue(2));//Checking whether value  exist in map
+        System.out.println("Map Size BEFORE clearing--> "+map.size()); // Checking the number of key-value pairs before clearing the map
         map.clear();   //Clearing the map
-        System.out.println(map.size()); //Checking the number of key-value pairs after clearing the map
+        System.out.println("Map Size AFTER clearing--> "+ map.size()); //Checking the number of key-value pairs after clearing the map
 
 
-      /*  How to Design a Good Key for HashMap? map keys should be coreconcepts.immutable  ;
-      This is the main reason why coreconcepts.immutable classes like String, Integer or other wrapper classes are good candidates for creating the Map Keys.*/
+      /*  How to Design a Good Key for HashMap? map keys should be immutable  ;
+      This is the main reason why immutable classes like String, Integer or other wrapper classes are good candidates for creating the Map Keys.*/
 
 
     }/* Equals hashcode contract - Must go -> https://howtodoinjava.com/java/basics/java-hashcode-equals-methods/

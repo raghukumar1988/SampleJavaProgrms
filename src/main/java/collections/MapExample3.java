@@ -18,10 +18,12 @@ public class MapExample3 {
         texMap.put(4, "Four");
         texMap.put(5, null);
         texMap.put(6, null);//values can be duplicate and can contain multiple null
-		texMap.put(null, "Value");//keys should be unique and can contain one null for HashMap&LinkedHashMap
-		//texMap.put(null, "Value");//treemap wont allow null key but allow null values
+        texMap.put(null, "Value");//keys should be unique and can contain one null for HashMap&LinkedHashMap; see below
+		texMap.put(null, "Value");//treemap wont allow null key but allow null values
         texMap.forEach((key, value) -> System.out.println("key-->" + key + " value-->" + value));
 
+        /* IMP Note: If HashMap & LinkedHashMap contains multiple null keys
+         it will override its value and end-up being one key    */
     }
 
 }

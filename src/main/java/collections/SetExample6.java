@@ -6,7 +6,7 @@ import java.util.Set;
 public class SetExample6 {
 
     public static void main(String[] args) {
-//Set<String> setex= new HashSet<String>();//random order and all 3 wont allow duplicates
+//Set<String> setex= new HashSet<String>();//random order and all 3 won't allow duplicates
         Set<String> setex = new LinkedHashSet<String>();  //maintains insertion order
 //Set<String> setex= new TreeSet<String>();  //maintains ascending order
         setex.add("SET");
