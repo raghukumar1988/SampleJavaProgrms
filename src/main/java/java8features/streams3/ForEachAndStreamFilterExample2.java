@@ -58,6 +58,19 @@ public class ForEachAndStreamFilterExample2 {
         System.out.println("###################################################");
     }
 
+
+    private static void removeNullUsingFilterMethod() {
+        List<String> names = Arrays.asList("Raghu","Raja",null,"Ramu",null);
+        System.out.println("Before null removal..");
+        names.forEach(System.out::println);
+        System.out.println("After null removal..");
+        names.stream()
+                //.filter(name->name!=null)
+                .filter(Objects::nonNull)  // java.util.Objects class
+                .forEach(System.out::println);
+        System.out.println("###################################################");
+    }
+
     private static void filteNamesWhichStartsWithM() {
         List<String> names = new ArrayList<String>();
         names.add("Maggie");
@@ -69,18 +82,6 @@ public class ForEachAndStreamFilterExample2 {
                 .filter(f -> f.startsWith("M")) //filtering names that starts with M
                 //.forEach(f -> System.out.println(f)); //displaying the stream using #Lambda Expression#
                 .forEach(System.out::println); //displaying the stream using #Method Reference#
-        System.out.println("###################################################");
-    }
-
-    private static void removeNullUsingFilterMethod() {
-        List<String> names = Arrays.asList("Raghu","Raja",null,"Ramu",null);
-        System.out.println("Before null removal..");
-        names.forEach(System.out::println);
-        System.out.println("After null removal..");
-        names.stream()
-                //.filter(name->name!=null)
-                .filter(Objects::nonNull)  // java.util.Objects class
-                .forEach(System.out::println);
         System.out.println("###################################################");
     }
 }

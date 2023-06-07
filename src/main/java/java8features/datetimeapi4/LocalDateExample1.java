@@ -15,13 +15,14 @@ public class LocalDateExample1 {
         System.out.println("Printing custom date using LocalDate.of() -->" + localDate1);
 
         LocalDate localDate2 = LocalDate.parse("2015-02-20");
+        //LocalDate localDate2 = LocalDate.parse("20-02-2015"); // throws DateTimeParseException
         System.out.println("Printing custom date using LocalDate.parse() -->" + localDate2);
 
         LocalDate tomorrow = LocalDate.now().plusDays(1);
         System.out.println("Gets the current local date and adds one day -->" + tomorrow);
 
        /* Below example obtains the current date and subtracts one month.
-          Note how it accepts an enum as the time unit.  */
+          Observe it accepts an enum as the time unit.  */
 
         LocalDate previousMonthSameDay = LocalDate.now().minus(1, ChronoUnit.MONTHS);
         System.out.println("Gets the current local date and reduce one month --> " + previousMonthSameDay);

@@ -28,7 +28,7 @@ public class SortingByComparableExample {
         conArr[3] = new AccountDetails(33987543L, "Hari", 1344.45, false);
         System.out.println("Raww--" + Arrays.toString(conArr));
         System.out.println("----------");
-        Arrays.sort(conArr);
+        Arrays.sort(conArr); // sorts based on compareTo implementation
         System.out.println("after Sort--" + Arrays.toString(conArr));
         System.out.println("***********");
     }
@@ -58,7 +58,7 @@ public class SortingByComparableExample {
     }
 
     private static void sortingPrimitiveListUsingSortMethodOfCollections() {
-    /* NOTE --> Don't get confused with below list.sort which takes comparator impl as arg
+    /* NOTE --> Don't get confused with list.sort which takes comparator impl as arg
      Recommended - list.sort(Comparator)
      Not Recommended - Collections.sort(accountDetailsList,Comparator); */
 
@@ -79,7 +79,6 @@ public class SortingByComparableExample {
     }
 
     private static void sortCustomAccountDetailsListByComparable() {
-        /*With Custom TYpe*/
         List<AccountDetails> accountDetailsList = new ArrayList<>();
         /*
         1) How do I initialize the long with the value 12345678910?
@@ -93,7 +92,8 @@ public class SortingByComparableExample {
         accountDetailsList.add(new AccountDetails(73987543L, "Ramu", 5344.45, true));
         accountDetailsList.add(new AccountDetails(33987543L, "Hari", 1344.45, false));
 
-        // uncomment different implementations in AccountDetails model and check the results
+        // uncomment different compareTo implementations in AccountDetails model and check the results
+        // This is the limitation of comparable as it allows only single sorting impl
         accountDetailsList.forEach(accountDetail -> System.out.println("Before sort " + accountDetail));
         System.out.println("----------");
         Collections.sort(accountDetailsList);

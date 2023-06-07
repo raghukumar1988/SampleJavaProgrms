@@ -34,6 +34,7 @@ public class FilterListByPrice61 {
         System.out.println("################################################");
     }
 
+    // Practical DTO mapping example
     private static void filterByIdMapByMethodAndCollectAsList(List<Product> productsList) {
         List<Product> modifiedProductList = productsList.stream()
                 .filter(product -> product.getId() < 3)
@@ -59,7 +60,7 @@ public class FilterListByPrice61 {
         Set<Product> productsSet = productsList.stream()
                 .filter(product -> product.getPrice() > 28000f)
                 .collect(Collectors.toSet());
-        System.out.println(productsSet);
+        System.out.println("Printing Product Set --> " +productsSet);
         System.out.println("################################################");
     }
 
@@ -78,7 +79,7 @@ public class FilterListByPrice61 {
         System.out.println("################################################");
     }
 
-    private static Product modifyProduct(Product product) {
+    private static Product modifyProduct(Product product) { // Utility method
 
         Product modifiedProduct = new Product();
         modifiedProduct.setId(product.getId() * 2);
@@ -87,9 +88,9 @@ public class FilterListByPrice61 {
         return modifiedProduct;
     }
 
-    private static List<Product> getStubbedProductList() {
+    private static List<Product> getStubbedProductList() { // Utility method
         List<Product> productsList = new ArrayList<Product>();
-        // Adding Productsm
+        // Adding Products
         productsList.add(new Product(1, "HP Laptop", 25000f));
         productsList.add(new Product(2, "Dell Laptop", 30000f));
         productsList.add(new Product(3, "Lenevo Laptop", 28000f));

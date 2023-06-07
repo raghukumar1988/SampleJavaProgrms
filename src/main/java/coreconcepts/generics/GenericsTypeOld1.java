@@ -12,7 +12,7 @@ public class GenericsTypeOld1 {
         this.name = name;
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         GenericsTypeOld1 type = new GenericsTypeOld1();
         type.setName("Raghu");
         String str = (String) type.getName();

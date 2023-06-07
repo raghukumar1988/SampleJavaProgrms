@@ -28,6 +28,12 @@ public class StreamIterateExample4 {
                 .filter(num->num%3==0)
                 .limit(10)
                 .forEach(System.out::println);
+
+        /* Stream.iterate(3,num->num+3)  // Alternate of above.. Prints 3,6,9,12 etc
+           Stream.iterate(3,num->num*3)  // Prints 3,9,27,etc
+                //.filter(num->num%3==0)
+                  .limit(10)
+                  .forEach(System.out::println); */
     }
 
     private static void printEvenNumbersUsingIterateMethod() {

@@ -16,6 +16,7 @@ public class ZonedDateTimeExample4 {
         allZoneIds.stream()
                         .limit(10)
                                 .forEach(zoneId2 -> System.out.println(" Printing 10 zone ids -->" +zoneId2));
+       // Below prints long list of zoneIds
        // allZoneIds.forEach(zoneId2 -> System.out.println(" Printing all zone ids -->" +zoneId2));
 
         LocalDateTime localDateTime = LocalDateTime.of(2015, Month.FEBRUARY, 20, 6, 30);

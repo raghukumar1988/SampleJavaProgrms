@@ -1,5 +1,7 @@
 package java8features.optional2;
 
+import lombok.SneakyThrows;
+
 import java.util.Optional;
 
 public class OptionalExample31 {
@@ -18,7 +20,13 @@ public class OptionalExample31 {
         System.out.println("ofNullable on Empty String: " + Optional.ofNullable(answer3));
 
         System.out.println("Optional.of() on empty String: " + Optional.of(answer3));
-        // throws java.lang.NullPointerException
+
+        /*If the program crashes even with Optional, why even bother using Optional?
+
+        The program wouldn't crash somewhere deeper in the code (when accessing object)
+        but at the very first use (initialization) of a null object, minimizing potential damage.*/
+
+        // below Optional.of(null) throws java.lang.NullPointerException
         System.out.println("Optional.of() on null String : " + Optional.of(answer2));
     }
 

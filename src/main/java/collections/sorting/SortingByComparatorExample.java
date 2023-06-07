@@ -41,19 +41,23 @@ public class SortingByComparatorExample {
         }
     };
 
-    //Normal implementation recommended approach
+    //Normal implementation RECOMMENDED approach
     public static class CompareById implements Comparator<Country> {
         @Override
         public int compare(Country o1, Country o2) {
             return Integer.compare(o1.getCountryId(), o2.getCountryId());
         }
     }
+    // Lambda version of above
+    private static Comparator<Country> compareById= (o1,o2)->Integer.compare(o1.getCountryId(),o2.getCountryId());
 
     // impl  using lambda expression & functional interface
+    // String dont have compare method hence using compareTo
     public static Comparator<Country> nameCompare = (o1, o2) -> o1.getCountryName().compareTo(o2.getCountryName());
 
     //Java 8 approach -- IMP -- No Need to override compareTo method
-    public static Comparator<Country> nameComp = Comparator.comparing(o -> o.getCountryName());
+    //public static Comparator<Country> nameComp = Comparator.comparing(o -> o.getCountryName());
+    public static Comparator<Country> nameComp = Comparator.comparing(Country::getCountryName);
 
 
     //  TODO - explore variants of thenComparing

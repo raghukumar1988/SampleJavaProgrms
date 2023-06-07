@@ -21,7 +21,8 @@ public class AccountDetails implements Comparable<AccountDetails> {
 
     @Override
     public int compareTo(AccountDetails o){
-        return this.getAccHolderName().compareTo(o.getAccHolderName());// for String we dont have compare
+        // for String we don't have compare method
+        return this.getAccHolderName().compareTo(o.getAccHolderName());
     }
    // we have Integer.compare(integer1, integer2); for int type
 

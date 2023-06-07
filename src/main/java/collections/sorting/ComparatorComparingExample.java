@@ -9,10 +9,11 @@ import java.util.List;
 public class ComparatorComparingExample {
     public static void main(String[] args) {
         sortingListByComparingMethodOfComparator();
-        sortingListinReverseByReversedMethodOfComparator();
+        sortingListInReverseByReversedMethodOfComparator();
         sortingListByComparingIntMethodOfComparator();
         sortingListByComparingLongMethodOfComparator();
-        sortingListByComparingDoubleMethodOfComparator(); // String can use normal comparing()
+        sortingListByComparingDoubleMethodOfComparator();
+        // String can use normal comparing()
         sortingListUsingComparingThenComparingMethod();
 
     }
@@ -21,7 +22,7 @@ public class ComparatorComparingExample {
         List<Employee> employeeList = new ArrayList<>();
         employeeList.add(new Employee("John", 25, 3000.0, 9922001L));
         employeeList.add(new Employee("Jake", 22, 4000.0, 3924401L));
-        employeeList.add(new Employee("Ace", 22, 2000.0, 5924001L));
+        employeeList.add(new Employee("Ace", 25, 6000.0, 5924001L));
         employeeList.add(new Employee("Keith", 35, 4000.0, 3924401L));
         System.out.println("Before sorting using comparing & thenComparing");
         employeeList.forEach(System.out::println);
@@ -36,9 +37,9 @@ public class ComparatorComparingExample {
 
     private static void sortingListByComparingDoubleMethodOfComparator() {
         List<Employee> employeeList = new ArrayList<>();
-        employeeList.add(new Employee("John", 25, 3000.0, 9922001L));
-        employeeList.add(new Employee("Ace", 22, 2000.0, 5924001L));
-        employeeList.add(new Employee("Keith", 35, 4000.0, 3924401L));
+        employeeList.add(new Employee("John", 25, 53000.0, 9922001L));
+        employeeList.add(new Employee("Ace", 67, 7000.0, 5924001L));
+        employeeList.add(new Employee("Keith", 35, 4000.0, 6924401L));
         System.out.println("Before sorting using comparingDouble");
         employeeList.forEach(System.out::println);
         employeeList.sort(Comparator.comparingDouble(Employee::getSalary));//getName will end up in CTE
@@ -49,9 +50,9 @@ public class ComparatorComparingExample {
 
     private static void sortingListByComparingLongMethodOfComparator() {
         List<Employee> employeeList = new ArrayList<>();
-        employeeList.add(new Employee("John", 25, 3000.0, 9922001L));
-        employeeList.add(new Employee("Ace", 22, 2000.0, 5924001L));
-        employeeList.add(new Employee("Keith", 35, 4000.0, 3924401L));
+        employeeList.add(new Employee("John", 25, 53000.0, 9922001L));
+        employeeList.add(new Employee("Ace", 67, 7000.0, 5924001L));
+        employeeList.add(new Employee("Keith", 35, 4000.0, 6924401L));
         System.out.println("Before sorting using comparingLong");
         employeeList.forEach(System.out::println);
         employeeList.sort(Comparator.comparingLong(Employee::getMobile));//getName will end up in CTE
@@ -64,9 +65,9 @@ public class ComparatorComparingExample {
         /* Comparator.comparingInt, which does the same thing as Comparator.comparing,
                 but it takes only int selectors. */
         List<Employee> employeeList = new ArrayList<>();
-        employeeList.add(new Employee("John", 25, 3000.0, 9922001));
-        employeeList.add(new Employee("Ace", 22, 2000.0, 5924001));
-        employeeList.add(new Employee("Keith", 35, 4000.0, 3924401));
+        employeeList.add(new Employee("John", 25, 53000.0, 9922001L));
+        employeeList.add(new Employee("Ace", 67, 7000.0, 5924001L));
+        employeeList.add(new Employee("Keith", 35, 4000.0, 6924401L));
         System.out.println("Before sorting comparingInt");
         employeeList.forEach(System.out::println);
         employeeList.sort(Comparator.comparingInt(Employee::getAge));//getName will end up in CTE
@@ -75,11 +76,11 @@ public class ComparatorComparingExample {
         System.out.println("######################################");
     }
 
-    private static void sortingListinReverseByReversedMethodOfComparator() {
+    private static void sortingListInReverseByReversedMethodOfComparator() {
         List<Employee> employeeList = new ArrayList<>();
-        employeeList.add(new Employee("John", 25, 3000.0, 9922001));
-        employeeList.add(new Employee("Ace", 22, 2000.0, 5924001));
-        employeeList.add(new Employee("Keith", 35, 4000.0, 3924401));
+        employeeList.add(new Employee("John", 25, 53000.0, 9922001L));
+        employeeList.add(new Employee("Ace", 67, 7000.0, 5924001L));
+        employeeList.add(new Employee("Keith", 35, 4000.0, 6924401L));
         System.out.println("Before sorting");
         employeeList.forEach(System.out::println);
         /*Comparator<Employee> ageComparator = Comparator.comparing(Employee::getAge);
@@ -92,11 +93,12 @@ public class ComparatorComparingExample {
 
     private static void sortingListByComparingMethodOfComparator() {
         List<Employee> employeeList = new ArrayList<>();
-        employeeList.add(new Employee("John", 25, 3000.0, 9922001));
-        employeeList.add(new Employee("Ace", 22, 2000.0, 5924001));
-        employeeList.add(new Employee("Keith", 35, 4000.0, 3924401));
+        employeeList.add(new Employee("John", 25, 53000.0, 9922001L));
+        employeeList.add(new Employee("Ace", 67, 7000.0, 5924001L));
+        employeeList.add(new Employee("Keith", 35, 4000.0, 6924401L));
         System.out.println("Before sorting");
         employeeList.forEach(System.out::println);
+        //employeeList.sort(Comparator.comparing(emp-> emp.getName()));
         employeeList.sort(Comparator.comparing(Employee::getName));
         System.out.println("After sorting using name");
         employeeList.forEach(System.out::println);

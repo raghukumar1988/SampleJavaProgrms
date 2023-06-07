@@ -19,15 +19,15 @@ public class StreamBoxingExample51 {
         List<Integer> doubledIntegerList = numberList3.stream()
                 .mapToInt(num -> num * 2)
                 .boxed() // will wrap to primitives to wrapper objects
-                .collect(Collectors.toList());
+                .collect(Collectors.toList()); // comment above line and observe CTE; if we switch to map() we don't need boxed()
         System.out.println(doubledIntegerList);
     }
 
     private static void mapTOIntExampleWithoutBoxing() {
         List<String> list = Arrays.asList("3", "6", "8", "14", "15");
         // Using Stream mapToInt(ToIntFunction mapper) and displaying the corresponding IntStream
-        //list.stream().mapToInt(num -> Integer.parseInt(num))
         list.stream()
+                //.mapToInt(numStr -> Integer.parseInt(numStr))
                 .mapToInt(Integer::parseInt)
                 .filter(num -> num % 3 == 0)
                 .forEach(System.out::println);

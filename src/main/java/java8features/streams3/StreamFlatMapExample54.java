@@ -4,15 +4,11 @@ import java.util.stream.Stream;
 
 public class StreamFlatMapExample54 {
     public static void main(String[] args) {
-        flatMapExampleWithStreamMerge();
-    }
-
-    private static void flatMapExampleWithStreamMerge() {
         mergeStreamsUsingFlatMap();
-        convertStringtoIntegerStreamAndPrintUsingFlatMap();
+        convertStringToIntegerStreamAndPrintUsingFlatMap();
     }
 
-    private static void convertStringtoIntegerStreamAndPrintUsingFlatMap() {
+    private static void convertStringToIntegerStreamAndPrintUsingFlatMap() {
         Stream.of("1", "2", "A", "4")
                 //.map(StreamMapExamples::parseStringValuesAsStream)
                 .flatMap(StreamFlatMapExample54::parseStringValuesAsStream)

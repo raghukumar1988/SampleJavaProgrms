@@ -9,6 +9,7 @@ public class LocalDateTimeExample3 {
         LocalDateTime now = LocalDateTime.now();
         System.out.println("Printing current date and time using now() -->"+now);
 
+        // we have multiple overloaded methods for fine-grained results
         LocalDateTime localDateTime = LocalDateTime.of(2015, Month.FEBRUARY, 20, 6, 30);
         System.out.println("Creating LocalDateTime using of() method --> " +localDateTime);
 

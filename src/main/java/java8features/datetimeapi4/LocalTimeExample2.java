@@ -8,6 +8,7 @@ public class LocalTimeExample2 {
         LocalTime now = LocalTime.now();
         System.out.println("Printing local time using LocalTime.now() ->  "+now);
 
+        //LocalTime sixThirty = LocalTime.parse("6:30");// throws DateTimeParseException
         LocalTime sixThirty = LocalTime.parse("06:30");
         System.out.println("LocalTime representing 6:30 a.m. using parse() -> " + sixThirty);
 

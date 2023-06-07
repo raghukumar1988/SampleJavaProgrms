@@ -17,7 +17,7 @@ public class LambaExample1 {
         Greeting greetingLamda= (a)-> System.out.println("Hello from " +a);
         greetingLamda.greet("Java 8 Lambda");
 
-        // Instead of creating our own FI we can use the default lang provided
+        // Instead of creating our own FI we can use the default lang provided FI
         Consumer<String> greetingConsumer = (a)-> System.out.println("Hello  from " +a);
         greetingConsumer.accept("Java 8 Lambda with Consumer");
 

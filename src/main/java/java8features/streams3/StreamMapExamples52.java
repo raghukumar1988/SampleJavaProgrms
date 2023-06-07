@@ -11,12 +11,13 @@ public class StreamMapExamples52 {
         multiplyListElementsBy3AndPrint();
         convertToUppercaseAndPrint();
         getLengthOfStringsAndPrint();
-        convertStringtoIntegerAndPrint();
+        convertStringToIntegerAndPrint();
         convertStringWithNulltoIntegerAndPrint();
         convertStringWithNonNumerictoIntegerAndPrint();
         convertStringWithNonNumerictoIntegerAndPrintWithFlatMap();
     }
 
+    // Output: 1 2 NumberFormatException 0 4
     private static void convertStringWithNonNumerictoIntegerAndPrintWithFlatMap() {
         Stream.of("1", "2", "A", "4")
                 //.map(StreamMapExamples::parseStringValuesAsStream)
@@ -24,7 +25,7 @@ public class StreamMapExamples52 {
                 .forEach(System.out::println);
     }
 
-    private static Stream<Integer> parseStringValuesAsStream(String s) {
+    private static Stream<Integer> parseStringValuesAsStream(String s) { // Utility Method
         int number = 0;
         try {
             number = Integer.parseInt(s);
@@ -34,11 +35,12 @@ public class StreamMapExamples52 {
         }
         return Stream.of(number); // Observe here and method return type
     }
-
+    // Output: 1 2 NumberFormatException 0 4
     private static void convertStringWithNonNumerictoIntegerAndPrint() {
         Stream.of("1", "2", "A", "4")
                 .map(StreamMapExamples52::parseStringValues)
                 .forEach(System.out::println);
+        System.out.println("#####################################");
     }
 
     private static Integer parseStringValues(String s) {  // Utility method
@@ -65,7 +67,7 @@ public class StreamMapExamples52 {
         return Integer::parseInt;
     }
 
-    private static void convertStringtoIntegerAndPrint() {
+    private static void convertStringToIntegerAndPrint() {
         Stream.of("1", "2", "3", "4")
                 .map(Integer::parseInt)
                 .forEach(System.out::println);
@@ -76,6 +78,7 @@ public class StreamMapExamples52 {
         List<String> list = Arrays.asList("Geeks", "FOR", "GEEKSQUIZ", "Computer", "Science", "gfg");
         list.stream() // Stream of String
                 .map(String::length) // Stream of Integer
+                //.mapToInt(String::length) // Alternate way - can be used to limit only Int types
                 .forEach(System.out::println);
         System.out.println("#####################################");
 
