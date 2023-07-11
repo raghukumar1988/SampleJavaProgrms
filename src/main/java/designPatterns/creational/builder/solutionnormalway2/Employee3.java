@@ -3,7 +3,7 @@ package designPatterns.creational.builder.solutionnormalway2;
 public class Employee3 {
 
     /*First of all, you need to create a public static nested class, which has all the instance attributes from the outer class.
-The naming convention for Builder usually is that and if the class name is Employee, then the builder class should be named as EmployeeBuilder.
+The naming convention for Builder usually is that if the class name is Employee, then the builder class should be named as EmployeeBuilder.
 The outer class Employee should have a 'private constructor' that takes a EmployeeBuilder object as its argument.
 The builder class should have a 'public constructor' with all the required attributes as parameters and these required attributes are defined as "final".
 The optional parameters which have setter methods to set the values. It should return the 'same Builder object' after setting the optional attribute.
@@ -35,7 +35,7 @@ So, the only way to get an Employee object is through the nested EmpolyeeBuilder
         this.mail = builder.mail;
     }
 
-    public String getFirstName() {
+    /*public String getFirstName() {
         return firstName;
     }
 
@@ -61,7 +61,7 @@ So, the only way to get an Employee object is through the nested EmpolyeeBuilder
 
     public String getMail() {
         return mail;
-    }
+    }*/
 
     @Override
     public String toString() {

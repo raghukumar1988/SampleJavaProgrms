@@ -8,15 +8,15 @@ public class StreamToArrayExample63 {
     public static void main(String[] args) {
 
         Stream<Integer> intStream = Stream.of(1,2,3,4);
-        int[] numberArray = intStream
+        double[] numberArray = intStream
                 .peek(System.out::println)// to debug
-                .mapToInt(Integer::valueOf) // This line does nothing
+                .mapToDouble(Double::valueOf) // This line does nothing
                 .peek(System.out::println) // to debug
                 .toArray();
         System.out.println(Arrays.toString(numberArray));
+        System.out.println();
 
 
-        // for difference check the javadoc; we can pass desired type as argument
         Stream<Integer> intStream2 = Stream.of(1,2,3,4);
         //Integer[] intArray = intStream.toArray(Integer[]::new); // simplified with method reference
         //Integer[] intArray = intStream.toArray(value -> new Integer[value]); //simplified with Lambda

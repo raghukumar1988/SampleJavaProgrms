@@ -93,7 +93,7 @@ public class SortingByComparableExample {
         accountDetailsList.add(new AccountDetails(33987543L, "Hari", 1344.45, false));
 
         // uncomment different compareTo implementations in AccountDetails model and check the results
-        // This is the limitation of comparable as it allows only single sorting impl
+        // The limitation of comparable is it allows only single sorting impl
         accountDetailsList.forEach(accountDetail -> System.out.println("Before sort " + accountDetail));
         System.out.println("----------");
         Collections.sort(accountDetailsList);

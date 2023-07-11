@@ -48,4 +48,13 @@ public class HRACalculator10 {
     private static int getEligibleAmount(int basicSalary) {
         return basicSalary / 2;
     }
+
+    /*  Algorithm:
+        Get inputs for BasicSalary,Monthly Rent Amount,HRA Amount and location details
+        Calculate eligible basic Salary exempted for Tax based on location
+        If the location is metro then 50% else its 40%
+        Calculate the excess amount  paid over the 10 % of Basic pay
+        Get the allocated HRA allowance
+        Put them in a array and find the lowest among the three
+        Print both amount exempted from tax and also remaining amount.  */
 }

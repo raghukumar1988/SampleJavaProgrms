@@ -2,6 +2,7 @@ package java8features.streams3;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -9,6 +10,30 @@ public class StreamConcatExample1 {
     public static void main(String[] args) {
         concatStreamsAndPrint();
         mergeMoreThan2Streams();
+
+        /* Non-Terminal Operations
+                filter()
+                map()
+                distinct()
+                sorted()
+                peek()
+
+         Terminal Operations
+                toArray()
+                reduce()
+                forEach()
+                forEachOrdered()
+                anyMatch()
+                allMatch()
+                noneMatch()
+                collect()
+                count()
+                findAny()
+                findFirst()
+                min()
+                max()
+                sum()
+                average()    */
     }
 
     private static void mergeMoreThan2Streams() {
@@ -17,7 +42,8 @@ public class StreamConcatExample1 {
         Stream<String> nameList3 = Stream.of("G","B","H");
         Stream<String> nameList4 = Stream.of("J","I","C");
         // Observe the mergedOutput return type carefully
-        Stream<Stream<String>> mergedOutput = Stream.of(nameList1, nameList2, nameList3, nameList4); // prev example uses list don't get confused
+        // prev example uses list don't get confused
+        Stream<Stream<String>> mergedOutput = Stream.of(nameList1, nameList2, nameList3, nameList4);
         System.out.println("Merged output without flatmap..");
         mergedOutput.forEach(System.out::println); // Observe result carefully
 
@@ -41,7 +67,8 @@ public class StreamConcatExample1 {
         Stream<List<String>> listStream = Stream.of(nameList1, nameList2);
         Stream<Stream<String>> stream = Stream.of(nameList1.stream(), nameList2.stream()); // requires flatmap
         List<String> collect = Stream.of(nameList1.stream(), nameList2.stream())
-                                        .flatMap(str -> str)
+                                        //.flatMap(str -> str) // Use below alternative
+                                        .flatMap(Function.identity())
                                         //.forEach(System.out::println);
                                         .collect(Collectors.toList());
         collect.forEach(str -> System.out.println("Uses Of method = " + str));

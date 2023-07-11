@@ -13,7 +13,7 @@ public class OptionalExample32 {
     }
 
     // The isPresent() method returns true if the value present in Optional
-    // The ifPresent API enables us to RUN SOME CODE on the wrapped value if it is found to be non-null.
+    // The ifPresent API enables us to RUN SOME CODE on the wrapped value if it is non-null.
     private static void isPresentOptionalAPI() {
 
         // Java 7 null check
@@ -24,6 +24,7 @@ public class OptionalExample32 {
 
         // Java 8 null handling using Optional
         Optional<String> opt = Optional.of("Ramesh");
+        //Optional<String> opt = Optional.ofNullable("Ramesh");
         if (opt.isPresent()) {
             System.out.println("Printing value if its present --> " + opt.get().length());
         }
@@ -40,7 +41,9 @@ public class OptionalExample32 {
     private static void ifPresentOrElseOptionalAPI() {
         Optional<String> empty = Optional.empty();
         Optional<String> empty1 = Optional.of("Raghu");
-        empty.ifPresentOrElse(OptionalExample32::printTheValues, () -> System.out.println("Optional is empty"));
+        //ifPresentOrElse - Runnable -> no args no returnType; Consumer -> take an argument and no returnType
+        empty.ifPresentOrElse(str -> System.out.println("String from Optional" + str), () -> System.out.println("Optional is empty"));
+        //empty.ifPresentOrElse(OptionalExample32::printTheValues, () -> System.out.println("Optional is empty"));
         empty1.ifPresentOrElse(OptionalExample32::printTheValues, () -> System.out.println("Optional is empty"));
 
     }

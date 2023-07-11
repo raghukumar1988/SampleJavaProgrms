@@ -7,7 +7,8 @@ import java.util.stream.Stream;
 public class StringSplitter {
     public static void main(String[] args) {
         String str = "Raghu  |234234234324  |   | 5353| |REG";
-        List<String> convertedRankList = Stream.of(str.split("\\|", -1))
+        //List<String> convertedRankList = Stream.of(str.split("\\|", -1))
+        List<String> convertedRankList = Stream.of(str.split("\\|"))
                 .collect(Collectors.toList());
 
         for (String convertedRank : convertedRankList) {

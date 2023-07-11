@@ -45,7 +45,8 @@ public class StreamListOfObjectToListOfAnotherObjectExample53 {
                 , new Product(3, "HairOil", 50));
 
         List<ExportProduct> exportProducts = products.stream()
-                .map(mapToExportProduct()).collect(Collectors.toList());
+                .map(mapToExportProduct())
+                .collect(Collectors.toList());
 
         exportProducts.forEach(System.out::println);
         System.out.println();

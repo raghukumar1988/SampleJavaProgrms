@@ -1,9 +1,10 @@
 package designPatterns.creational.factory;
 
 public class NotificationFactory {
-public static Notification getNotification(String  notificationTYpe){
+public static Notification getNotification(String  notificationTYpe) throws UnknownNotificationException {
     if(notificationTYpe ==null || notificationTYpe.isEmpty()){
-        return  null;
+        //return  null;
+        throw new UnknownNotificationException("Unknown Type");
     }
     switch(notificationTYpe){
         case "SMS":
@@ -20,7 +21,8 @@ public static Notification getNotification(String  notificationTYpe){
         }
         default:
         {
-            return null;
+            //return null;
+            throw new UnknownNotificationException("Unknown Notification Type..");
         }
     }
 }

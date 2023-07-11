@@ -64,6 +64,7 @@ public class MapBookListWithAuthor4 {
             }
         }
         accountMap.forEach((s, books) -> System.out.println(s + "  " + books));
+        System.out.println();
     }
 
 }

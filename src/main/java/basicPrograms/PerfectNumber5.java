@@ -2,7 +2,7 @@ package basicPrograms;
 
 public class PerfectNumber5 {
     public static void main(String[] args) {
-        checkIfPerfectNumber(6); // perfect number -> 1 + 2 + 3 = 6
+        checkIfPerfectNumber(6); // perfect number -> 1 + 2 + 3 = 6 ( Sum of divisors is equal to Number)
         checkIfPerfectNumber(7); // not a perfect number
         checkIfPerfectNumber(28); // perfect number -> 1 + 2 + 4 + 7 + 14 = 28
         checkIfPerfectNumber(496); // perfect number

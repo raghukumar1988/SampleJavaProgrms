@@ -77,8 +77,8 @@ public class StreamMapExamples52 {
     private static void getLengthOfStringsAndPrint() {
         List<String> list = Arrays.asList("Geeks", "FOR", "GEEKSQUIZ", "Computer", "Science", "gfg");
         list.stream() // Stream of String
-                .map(String::length) // Stream of Integer
-                //.mapToInt(String::length) // Alternate way - can be used to limit only Int types
+                //.map(String::length) // Stream of Integer
+                .mapToInt(String::length) // Alternate way - can be used to limit only Int types
                 .forEach(System.out::println);
         System.out.println("#####################################");
 

@@ -18,7 +18,7 @@ public class StreamBoxingExample51 {
 
         List<Integer> doubledIntegerList = numberList3.stream()
                 .mapToInt(num -> num * 2)
-                .boxed() // will wrap to primitives to wrapper objects
+                .boxed() // will wrap to primitives to wrapper objects ; IntStream to Stream<Integer>
                 .collect(Collectors.toList()); // comment above line and observe CTE; if we switch to map() we don't need boxed()
         System.out.println(doubledIntegerList);
     }
@@ -50,6 +50,7 @@ public class StreamBoxingExample51 {
         numberList.stream()
                 .map(number -> number * 3)
                 .forEach(System.out::println);
+        System.out.println();
     }
 
 }

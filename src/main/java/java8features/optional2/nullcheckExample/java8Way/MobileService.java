@@ -9,6 +9,7 @@ public class MobileService {
 		return mobile.flatMap(Mobile::getDisplayFeatures)
 				.flatMap(DisplayFeatures::getResolution)
 				.map(ScreenResolution::getWidth)
+				//.or(()->Optional.of(7)).get();
 				//.orElse(0); // Option 1
 
 				/*.orElseGet(()-> { // Option 2
@@ -16,7 +17,7 @@ public class MobileService {
 					return 1;
 				});*/
 
-				//.orElseThrow(); // Option 3
+				//.orElseThrow(); // Option 3 - default exception
 
 				.orElseThrow(IllegalArgumentException::new);  // Option 4
 
