@@ -17,3 +17,8 @@ public class MainClass {
         }
     }
 }
+
+
+    /*  The Factory pattern provides an interface for creating objects,
+        but it lets subclasses decide which class to instantiate.
+        It promotes loose coupling by abstracting the object creation process.  */
